@@ -175,6 +175,7 @@ Completed: 2026-09-18.
 - Verification: Go tests pass; Flutter analysis has no errors and reports 281 existing findings; web ESLint passes with two pre-existing image warnings; formatting and diff whitespace checks pass. Migration checksums were regenerated and verified.
 - Final re-audit correction: the web admin activity contract and turn period field were checked end-to-end, the generated `period` localization key was restored after the model-field rename, and the baseline migration now uses the GORM `period_hours` column with a regenerated `atlas.sum`.
 - Final Phase 5 reference correction: the heatmap’s remaining `monthlyPayData` local was renamed to `monthlyPaymentData`; the migration checksum was independently recomputed and matches `atlas.sum`.
+- Consolidated final audit: all Phase 1–5 rename tables were rechecked across declarations, callers, serialization, SQL/GORM, fixtures, tests, localization, and web consumers. No additional missed references were found.
 - Previously documented concerns remain unchanged: the payment cache round-trip mismatch and SQLite linked-expense repayment confirmation issue. They are logic/compatibility concerns outside this naming work.
 
 ## Verification

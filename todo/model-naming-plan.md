@@ -1,7 +1,7 @@
 # Model naming improvement plan
 
 Created: 2026-09-18.
-Status: Phases 1–4 completed; Phase 5 pending.
+Status: Phases 1–5 completed.
 
 ## Scope
 
@@ -152,7 +152,7 @@ Completed: 2026-09-18.
 - Renamed stats callers and files, auth session storage fields (`accessToken`/`refreshToken`), and OTP expiry serialization. Preserved the two separate auth concepts.
 - Verification: Go tests pass; Flutter analysis has no errors (280 existing findings). Formatting and whitespace checks pass. Existing product wording such as “plan,” “payments,” and “assignees” in display text remains unchanged where it is user-facing.
 
-## ⏳ Phase 5 — Update references and development contracts
+## ✅ Phase 5 — Update references and development contracts
 
 1. Search declarations and all references, including raw SQL, GORM tags, associations, JSON maps, local serialization, fixtures, tests, and docs.
 2. Update server declarations, database schema definitions, SQL references, REST requests/responses, and Flutter serialization together. Update affected web consumers.
@@ -160,6 +160,17 @@ Completed: 2026-09-18.
 4. Rename serialized keys and record-kind strings directly. Supporting old builds or old cache formats is unnecessary; document any development cache reset needed for testing.
 5. Keep numeric enum values, field types, defaults, relationships, validation, and calculations unchanged.
 6. Check remaining old-name occurrences individually, distinguishing intentional product wording from missed references.
+
+### Phase 5 implementation notes
+
+Completed: 2026-09-18.
+
+- Audited declarations and references across Go, Flutter, migrations, REST payloads, local serialization, fixtures, tests, and web admin consumers. Updated the web admin activity contract from `dueAt` to `scheduledAt`.
+- Renamed remaining scheduled-event REST/local keys and turn period fields to `scheduledAt`, `latitude`, `longitude`, `coordinates`, and `periodHours`; preserved numeric enum values, field types, formulas, validation, relationships, and UI wording.
+- Updated OTP expiry columns/keys, migration checksums, auth/session serialization, and all affected generated/local references. No old-name aliases, compatibility readers, or data reset were added. Development caches require clearing after the serialized-name changes, as documented in Phases 1–2.
+- Remaining old-name search hits are intentional: group descriptions still use the separate established `desc` contract, product-facing “plan,” “payment,” “repay,” and “assignees” wording remains displayed text, and local variable names such as `dueAt` in unrelated historical/UI contexts are not serialized model fields.
+- Verification: Go tests pass; Flutter analysis has no errors and reports 281 existing findings; web ESLint passes with two pre-existing image warnings; formatting and diff whitespace checks pass. Migration checksums were regenerated and verified.
+- Previously documented concerns remain unchanged: the payment cache round-trip mismatch and SQLite linked-expense repayment confirmation issue. They are logic/compatibility concerns outside this naming work.
 
 ## Verification
 

@@ -1,7 +1,7 @@
 # Model naming improvement plan
 
 Created: 2026-09-18.
-Status: Phases 1–3 completed; Phases 4–5 pending.
+Status: Phases 1–4 completed; Phase 5 pending.
 
 ## Scope
 
@@ -115,7 +115,7 @@ Completed: 2026-09-18.
 - Verification: `go test ./...`, `go vet ./...`, and 21 focused Flutter payment/REST tests pass. Route tests cover authenticated dispatch and invalid IDs. Formatting, whitespace, old-identifier searches, and locale-value comparisons pass. Flutter analysis retains the existing findings with no errors.
 - Intentional remaining wording: the stored default repayment title `repay`, displayed “Select assignees,” and translated text retain their previous values. Token-purchase `pay` actions are verbs and unrelated to record payloads. `PayDatum` and related statistics names remain for Phase 4. Previously documented cache and linked-expense confirmation issues remain unchanged.
 
-## ⏳ Phase 4 — Other models
+## ✅ Phase 4 — Other models
 
 | Current | Proposed | Reason |
 | --- | --- | --- |
@@ -142,6 +142,15 @@ Align RecordType.plan, PlanInput, payload accessors/keys, and creation methods w
 Keep Turn, FriendRecords, User, Group, GroupMember, Asset, AssetOwnership, TokenPurchase, TokenMovement, RecordChange, Money, and Failure.
 
 Defer names whose intended meaning is not established, such as Turn.iter or unclear legacy abbreviations. Trace their uses before choosing a name. If meaning remains unclear, leave the field unchanged and record the question. Do not change behavior to justify a name.
+
+### Phase 4 implementation notes
+
+Completed: 2026-09-18.
+
+- Renamed the remaining model types: Go `Notification` and `OTP` (`ExpiresAt`), Flutter `AuthTokens`, `AuthSession`, `ScheduledEvent`, `PaymentStatsBucket`, and `RecordStatsCalculator`.
+- Renamed scheduled-event fields and payload keys to `scheduledAt`, `latitude`, `longitude`, and `coordinates`; updated the Go baseline columns and REST/app serialization. Renamed `FriendRecords.total` to `netBalance` and preserved its signed aggregate formula.
+- Renamed stats callers and files, auth session storage fields (`accessToken`/`refreshToken`), and OTP expiry serialization. Preserved the two separate auth concepts.
+- Verification: Go tests pass; Flutter analysis has no errors (280 existing findings). Formatting and whitespace checks pass. Existing product wording such as “plan,” “payments,” and “assignees” in display text remains unchanged where it is user-facing.
 
 ## ⏳ Phase 5 — Update references and development contracts
 

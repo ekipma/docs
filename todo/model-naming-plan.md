@@ -1,7 +1,7 @@
 # Model naming improvement plan
 
 Created: 2026-09-18.
-Status: Proposed; naming changes have not been implemented.
+Status: Phase 1 completed; Phases 2–5 pending.
 
 ## Scope
 
@@ -20,31 +20,42 @@ The project is in development. Rename database and API identifiers directly wher
 - Use consistent vocabulary across server, app, API, and tests, respecting each language's casing.
 - Keep names that already fit. Do not restructure models to make a proposed name fit.
 
-## Phase 1 — Core record types
+## ✅ Phase 1 — Core record types
 
 Sources: server/models/record_model.go, server/models/record_ops.go, app/lib/models/record.dart, and app/lib/models/api_types.dart.
 
 | Current | Proposed | Reason |
 | --- | --- | --- |
 | Go Rec | Record | Matches Flutter; removes abbreviation |
-| Pay | PaymentDetails | Existing payload covers expenses and repayments |
+| Pay | Payment | Existing payload covers expenses and repayments |
 | PayInput | PaymentInput | Matches the payload vocabulary |
-| PayType | PaymentKind | Distinguishes kinds of payment records |
+| PayType | PaymentType | Distinguishes kinds of payment records |
 | normal / repay | expense / repayment | Names the categories explicitly |
 | RecordType.pay | RecordType.payment | Names the shared category |
 | PayUnit | Currency | Treat USD and IRTT as distinct currencies in the app |
 
-Apply corresponding Go names such as RecordTypePayment, PaymentKindExpense, and PaymentKindRepayment. Keep enum ordering and numeric values unchanged.
+Apply corresponding Go names such as RecordTypePayment, PaymentTypeExpense, and PaymentTypeRepayment. Keep enum ordering and numeric values unchanged.
 
 Keep RecordValue and the existing embedded Go fields and Flutter inheritance structure. Do not introduce separate Expense and Repayment tables or classes as part of this rename.
 
-## Phase 2 — Record fields
+### Phase 1 implementation notes
+
+Completed: 2026-09-18.
+
+Verification: `go test ./...`, `go vet ./...`, Go/Dart formatting, diff whitespace checks, and GORM schema generation passed; Atlas checksums verified. Five focused Flutter tests pass for numeric enum stability, REST parsing, and Payment serialization across both payment kinds and currencies. Full Flutter suite: 23 passed, 4 failed; the same counter smoke-test failure (missing UICubit) and three premium golden mismatches reproduce on an isolated unchanged HEAD. Flutter analysis reports 280 findings (279 infos, one existing null-aware-operator warning), with no errors. These unrelated failures/findings are outside this rename.
+
+- Renamed core Go and Flutter types and their callers; numeric enum values and embedded/inherited structures are unchanged.
+- REST record kind is now `payment`. Updated the development baseline to `records` and `record_assignees.record_id`, including raw SQL and the migration checksum. No database was modified or reset. An existing database using the previous baseline needs deliberate schema reconciliation before running this version; the edited baseline does not upgrade an already-applied database.
+- Field names such as `payType`/`payUnit` and accessors such as `pay` remain for Phases 2–3. Web presentation labels and historical completed-plan documents remain unchanged.
+- No new cache reset is required by the Phase 1 numeric enum/type renames. Separately discovered existing issue: `Record.toJson` serializes payment `amount`, but `Record.fromJson` reads `total`; full record cache round trips already fail for payment records with participants. This behavior was preserved and needs a separate fix. Payment payload round trips are covered independently.
+
+## ⏳ Phase 2 — Record fields
 
 | Current | Proposed | Notes |
 | --- | --- | --- |
 | repaidBy / RepaidBy | repaymentRecordId / RepaymentRecordID | Identifies a record, not a person |
 | toRepay / ToRepay | expenseRecordIds / ExpenseRecordIDs | Original expense records covered by repayment |
-| payType | paymentKind | Matches renamed enum |
+| payType | paymentType | Matches renamed enum |
 | payUnit / PayUnit | currency / Currency | Matches renamed enum; preserve existing values and amount scale |
 | Go Total | TotalAmount | Full amount before splitting |
 | Flutter amount | shareAmount | Existing total divided by participant count; repayments currently have one participant |
@@ -63,7 +74,7 @@ Document the existing repaymentRecordId convention: an expense points to its rep
 
 Keep authorId and assigneeId as shared record fields because their roles vary by record kind. Add short comments explaining current roles instead of renaming every assignee to debtor or recipient.
 
-## Phase 3 — Operations and callers
+## ⏳ Phase 3 — Operations and callers
 
 | Current | Proposed |
 | --- | --- |
@@ -81,7 +92,7 @@ Preserve every predicate's existing conditions. For example, pendingRepay includ
 
 Align payload accessors, form/widget names, filenames, imports, REST handler names, and translation-key references. Keep displayed wording and interactions unchanged, except straightforward grammatical corrections if needed.
 
-## Phase 4 — Other models
+## ⏳ Phase 4 — Other models
 
 | Current | Proposed | Reason |
 | --- | --- | --- |
@@ -109,7 +120,7 @@ Keep Turn, FriendRecords, User, Group, GroupMember, Asset, AssetOwnership, Token
 
 Defer names whose intended meaning is not established, such as Turn.iter or unclear legacy abbreviations. Trace their uses before choosing a name. If meaning remains unclear, leave the field unchanged and record the question. Do not change behavior to justify a name.
 
-## Phase 5 — Update references and development contracts
+## ⏳ Phase 5 — Update references and development contracts
 
 1. Search declarations and all references, including raw SQL, GORM tags, associations, JSON maps, local serialization, fixtures, tests, and docs.
 2. Update server declarations, database schema definitions, SQL references, REST requests/responses, and Flutter serialization together. Update affected web consumers.

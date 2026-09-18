@@ -32,7 +32,7 @@ Sources: server/models/record_model.go, server/models/record_ops.go, app/lib/mod
 | PayType | PaymentKind | Distinguishes kinds of payment records |
 | normal / repay | expense / repayment | Names the categories explicitly |
 | RecordType.pay | RecordType.payment | Names the shared category |
-| PayUnit | MoneyUnit | Describes denomination without assuming it is only a currency code |
+| PayUnit | Currency | Treat USD and IRTT as distinct currencies in the app |
 
 Apply corresponding Go names such as RecordTypePayment, PaymentKindExpense, and PaymentKindRepayment. Keep enum ordering and numeric values unchanged.
 
@@ -45,7 +45,7 @@ Keep RecordValue and the existing embedded Go fields and Flutter inheritance str
 | repaidBy / RepaidBy | repaymentRecordId / RepaymentRecordID | Identifies a record, not a person |
 | toRepay / ToRepay | expenseRecordIds / ExpenseRecordIDs | Original expense records covered by repayment |
 | payType | paymentKind | Matches renamed enum |
-| payUnit | moneyUnit | Matches renamed enum |
+| payUnit / PayUnit | currency / Currency | Matches renamed enum; preserve existing values and amount scale |
 | Go Total | TotalAmount | Full amount before splitting |
 | Flutter amount | shareAmount | Existing total divided by participant count; repayments currently have one participant |
 | signedAmount | signedShareAmount | Keep its exact calculation |

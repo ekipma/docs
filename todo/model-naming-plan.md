@@ -85,6 +85,7 @@ Completed: 2026-09-18.
 - Verification: all Go tests and `go vet ./...` pass; 20 focused Flutter payment/REST tests pass. Coverage includes REST field names, loaded participants, repayment ID storage, standalone repayment confirmation, account-relative balance direction, empty participants, and turn-record local serialization. Formatting and whitespace checks pass. Flutter analysis retains the existing findings with no errors.
 - Separate existing issue: a new SQLite lifecycle test could not confirm a repayment with nonempty linked expense IDs (`UNKNOWN_ERR`); the same test fails on isolated pre-Phase-2 HEAD. The existing `pq.Int64Array` used in the confirmation `IN (?)` query was left unchanged. This limits lifecycle verification for linked expenses and needs separate investigation; no PostgreSQL confirmation claim is made.
 - Audited participant locals and creation parameters: Go ID lists use `participantIDs`; loaded user lists and Flutter creation parameters use `participants`.
+- Follow-up audit correction: record-creation parameters/controllers now consistently use `description`, payment creation uses `currency`, and REST parsing uses `groupID`; the remaining `desc` contract is limited to the separate Group model.
 - Group-model `desc`, translation keys, widget names, and operation/accessor names retain their current names where outside Phase 2. No web contract consumed these renamed record fields.
 
 ## ✅ Phase 3 — Operations and callers
@@ -114,6 +115,7 @@ Completed: 2026-09-18.
 - Client and server now use `POST /api/v1/records/:id/repayment/confirm`. No old-route alias was added. Renamed payment error codes to `PAYMENT_*_ERR` and aligned translation keys/constants across all three locales; all translated values are unchanged.
 - Verification: `go test ./...`, `go vet ./...`, and 21 focused Flutter payment/REST tests pass. Route tests cover authenticated dispatch and invalid IDs. Formatting, whitespace, old-identifier searches, and locale-value comparisons pass. Flutter analysis retains the existing findings with no errors.
 - Intentional remaining wording: the stored default repayment title `repay`, displayed “Select assignees,” and translated text retain their previous values. Token-purchase `pay` actions are verbs and unrelated to record payloads. `PayDatum` and related statistics names remain for Phase 4. Previously documented cache and linked-expense confirmation issues remain unchanged.
+- Follow-up audit correction: the statistics calculator’s local `payRecords` collection was renamed to `paymentRecords`; no Phase 3 operation, predicate, route, accessor, or filename still uses the old naming.
 
 ## ✅ Phase 4 — Other models
 
@@ -151,6 +153,7 @@ Completed: 2026-09-18.
 - Renamed scheduled-event fields and payload keys to `scheduledAt`, `latitude`, `longitude`, and `coordinates`; updated the Go baseline columns and REST/app serialization. Renamed `FriendRecords.total` to `netBalance` and preserved its signed aggregate formula.
 - Renamed stats callers and files, auth session storage fields (`accessToken`/`refreshToken`), and OTP expiry serialization. Preserved the two separate auth concepts.
 - Verification: Go tests pass; Flutter analysis has no errors (280 existing findings). Formatting and whitespace checks pass. Existing product wording such as “plan,” “payments,” and “assignees” in display text remains unchanged where it is user-facing.
+- Follow-up audit correction: remaining abbreviated Phase 4 locals were expanded: map state uses `coordinates`, statistics use `paymentData`/`paymentDatum`, and graph inputs use `paymentData`. The web admin session’s `token` remains a separate framework session contract.
 
 ## ✅ Phase 5 — Update references and development contracts
 
@@ -170,6 +173,7 @@ Completed: 2026-09-18.
 - Updated OTP expiry columns/keys, migration checksums, auth/session serialization, and all affected generated/local references. No old-name aliases, compatibility readers, or data reset were added. Development caches require clearing after the serialized-name changes, as documented in Phases 1–2.
 - Remaining old-name search hits are intentional: group descriptions still use the separate established `desc` contract, product-facing “plan,” “payment,” “repay,” and “assignees” wording remains displayed text, and local variable names such as `dueAt` in unrelated historical/UI contexts are not serialized model fields.
 - Verification: Go tests pass; Flutter analysis has no errors and reports 281 existing findings; web ESLint passes with two pre-existing image warnings; formatting and diff whitespace checks pass. Migration checksums were regenerated and verified.
+- Final re-audit correction: the web admin activity contract and turn period field were checked end-to-end, the generated `period` localization key was restored after the model-field rename, and the baseline migration now uses the GORM `period_hours` column with a regenerated `atlas.sum`.
 - Previously documented concerns remain unchanged: the payment cache round-trip mismatch and SQLite linked-expense repayment confirmation issue. They are logic/compatibility concerns outside this naming work.
 
 ## Verification

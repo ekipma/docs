@@ -160,3 +160,22 @@ Add tests covering:
 6. Add admin management.
 7. Remove the hard-coded `assetPrices` map.
 8. Run migration and integration tests in staging.
+
+## Remaining work from the plan:
+1. Flutter dynamic catalog
+   Replace the static assets map used by the shop with data fetched from GET /api/v1/assets. Keep only visual/rendering metadata locally.
+2. Admin asset management
+   Add admin API and panel tab to:
+   - List all assets, including inactive ones
+   - Add assets
+   - Change prices
+   - Activate/deactivate assets
+3. Ownership compatibility after price changes
+   Current ownership is still stored as hash(uuid:price). If a price changes, the app’s ownership checks can become inconsistent. Ownership should eventually store the asset ID independently from the purchase price.
+4. Dedicated tests
+   Add the catalog and purchase tests specified in the plan, including inactive assets, forged values, concurrency, and price changes.
+5. Migration rollout
+   Apply and validate 20260918000000_assets.sql in staging/production.
+6. Rollback handling
+   Add a down/rollback migration if required by the project’s migration workflow.
+Completed: database model, seed migration, database-based pricing, active-status validation, GET /api/v1/assets, ID-only purchase requests, and removal of the hard-coded price map.

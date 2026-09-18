@@ -1,7 +1,7 @@
 # Model naming improvement plan
 
 Created: 2026-09-18.
-Status: Phase 1 completed; Phases 2–5 pending.
+Status: Phases 1–3 completed; Phases 4–5 pending.
 
 ## Scope
 
@@ -49,7 +49,7 @@ Verification: `go test ./...`, `go vet ./...`, Go/Dart formatting, diff whitespa
 - Field names such as `payType`/`payUnit` and accessors such as `pay` remain for Phases 2–3. Web presentation labels and historical completed-plan documents remain unchanged.
 - No new cache reset is required by the Phase 1 numeric enum/type renames. Separately discovered existing issue: `Record.toJson` serializes payment `amount`, but `Record.fromJson` reads `total`; full record cache round trips already fail for payment records with participants. This behavior was preserved and needs a separate fix. Payment payload round trips are covered independently.
 
-## ⏳ Phase 2 — Record fields
+## ✅ Phase 2 — Record fields
 
 | Current | Proposed | Notes |
 | --- | --- | --- |
@@ -74,7 +74,20 @@ Document the existing repaymentRecordId convention: an expense points to its rep
 
 Keep authorId and assigneeId as shared record fields because their roles vary by record kind. Add short comments explaining current roles instead of renaming every assignee to debtor or recipient.
 
-## ⏳ Phase 3 — Operations and callers
+### Phase 2 implementation notes
+
+Completed: 2026-09-18.
+
+- Renamed record/payment fields and their Go, Flutter, REST, local JSON, SQL, and test references. REST uses `totalAmount`, `currency`, `paymentType`, `repaymentRecordId`, `expenseRecordIds`, `participantIds`, and `description`. Local payment payloads use `shareAmount` and `balanceDirection`; shared local record fields use explicit `Id` suffixes.
+- Renamed the participant join table to `record_participants` and updated the development baseline/checksum. Generated GORM schema agrees with the renamed columns and associations. No database was modified; an already-applied baseline still requires deliberate schema reconciliation.
+- Added comments documenting author/assignee roles and the zero/repayment/self-reference convention. Preserved amount splitting, signed amounts, participant counts, predicates, and self-directed payment classification.
+- Development testing must clear the old local RecordsCubit cache because its serialized field names changed; no legacy reader was added and no cache was cleared automatically. The previously documented payment record cache issue remains: the writer now emits `shareAmount`, while the record reader expects `totalAmount`. Payment payload and turn-record local round trips are tested independently.
+- Verification: all Go tests and `go vet ./...` pass; 20 focused Flutter payment/REST tests pass. Coverage includes REST field names, loaded participants, repayment ID storage, standalone repayment confirmation, account-relative balance direction, empty participants, and turn-record local serialization. Formatting and whitespace checks pass. Flutter analysis retains the existing findings with no errors.
+- Separate existing issue: a new SQLite lifecycle test could not confirm a repayment with nonempty linked expense IDs (`UNKNOWN_ERR`); the same test fails on isolated pre-Phase-2 HEAD. The existing `pq.Int64Array` used in the confirmation `IN (?)` query was left unchanged. This limits lifecycle verification for linked expenses and needs separate investigation; no PostgreSQL confirmation claim is made.
+- Audited participant locals and creation parameters: Go ID lists use `participantIDs`; loaded user lists and Flutter creation parameters use `participants`.
+- Group-model `desc`, translation keys, widget names, and operation/accessor names retain their current names where outside Phase 2. No web contract consumed these renamed record fields.
+
+## ✅ Phase 3 — Operations and callers
 
 | Current | Proposed |
 | --- | --- |
@@ -91,6 +104,16 @@ Keep authorId and assigneeId as shared record fields because their roles vary by
 Preserve every predicate's existing conditions. For example, pendingRepay includes an author-is-current-account check; retain that specificity.
 
 Align payload accessors, form/widget names, filenames, imports, REST handler names, and translation-key references. Keep displayed wording and interactions unchanged, except straightforward grammatical corrections if needed.
+
+### Phase 3 implementation notes
+
+Completed: 2026-09-18.
+
+- Renamed creation/confirmation operations and all payment/repayment predicates, preserving their conditions. `isPendingRepaymentByMe` still requires the current account to be the author; `canConfirmRepayment` retains its existing author-not-current-account condition.
+- Renamed the Go input payload to `Payment` and Flutter accessor/local payload names to `payment`. Aligned payment forms, repayment dialogs, participant selectors/lists, filters, helper names, filenames, imports, and their callers.
+- Client and server now use `POST /api/v1/records/:id/repayment/confirm`. No old-route alias was added. Renamed payment error codes to `PAYMENT_*_ERR` and aligned translation keys/constants across all three locales; all translated values are unchanged.
+- Verification: `go test ./...`, `go vet ./...`, and 21 focused Flutter payment/REST tests pass. Route tests cover authenticated dispatch and invalid IDs. Formatting, whitespace, old-identifier searches, and locale-value comparisons pass. Flutter analysis retains the existing findings with no errors.
+- Intentional remaining wording: the stored default repayment title `repay`, displayed “Select assignees,” and translated text retain their previous values. Token-purchase `pay` actions are verbs and unrelated to record payloads. `PayDatum` and related statistics names remain for Phase 4. Previously documented cache and linked-expense confirmation issues remain unchanged.
 
 ## ⏳ Phase 4 — Other models
 

@@ -21,7 +21,7 @@ CDN -> MinIO: serve processed public avatar
 3. Create separate buckets or prefixes:
    - `avatar-staging`: private, short-lived uploads.
    - `avatar-public`: processed images served through the CDN.
-4. Configure lifecycle cleanup for abandoned staging objects.
+4. Configure lifecycle cleanup for abandoned staging objects. *(Done in Compose with one-day expiry; production retention should be tuned.)*
 5. Create least-privilege credentials:
    - API credentials: create presigned upload URLs and read staging objects.
    - Worker credentials: read staging, write public variants, delete staging.
@@ -35,7 +35,7 @@ S3_BUCKET_AVATAR_STAGING=avatar-staging
 S3_BUCKET_AVATAR_PUBLIC=avatar-public
 S3_ACCESS_KEY=...
 S3_SECRET_KEY=...
-S3_PUBLIC_BASE_URL=https://cdn.ekipma.ir/avatars
+S3_PUBLIC_BASE_URL=https://cdn.ekipma.ir
 ```
 
 ## Phase 2: Image-processing boundary
@@ -46,7 +46,7 @@ Create one server-side image pipeline used regardless of whether the bytes arriv
 2. Verify the object contents, not only its MIME type or filename. *(Done.)*
 3. Fully decode the image and enforce pixel dimensions and an allowed format. *(Done.)*
 4. Strip EXIF metadata, including GPS data. *(Done for JPEG re-encoding.)*
-5. Resize and center-crop into fixed variants, initially `128.webp` and `512.webp`. *(Partially done: JPEG variants currently used.)*
+5. Resize and center-crop into fixed variants, initially `128.webp` and `512.webp`. *(Done.)*
 6. Re-encode the output and reject malformed or excessively expensive images. *(Done.)*
 7. Write only processed output to `avatar-public`; never publish the original upload. *(Done.)*
 8. Delete the staging object after success or after a short retention period after failure. *(Done after success; lifecycle cleanup remains.)*
@@ -105,7 +105,7 @@ Return a versioned URL so cached clients see the replacement immediately. Do not
 
 ## Phase 5: Flutter migration
 
-1. Keep the current `PUT /api/v1/me/avatar` endpoint as a compatibility path. *(Done.)*
+1. Keep the current `PUT /api/v1/me/avatar` endpoint as a compatibility path. *(Not applicable: removed before production because there are no users.)*
 2. Add a new REST client method for upload initialization. *(Done.)*
 3. Upload directly to the presigned URL with progress reporting and cancellation. *(Done in the REST client; callers can provide progress and a Dio `CancelToken`.)*
 4. Call the completion endpoint. *(Done.)*
@@ -113,7 +113,7 @@ Return a versioned URL so cached clients see the replacement immediately. Do not
 6. Preserve the existing fallback avatar behavior for offline/error cases.
 7. Release the API compatibility path before shipping the new app.
 
-After adoption, the legacy multipart endpoint can either proxy into the same processing pipeline or be removed in a later breaking API version.
+The legacy multipart endpoint was removed before production because there are no existing users or clients to migrate.
 
 ## Security and reliability requirements
 
@@ -137,7 +137,7 @@ After adoption, the legacy multipart endpoint can either proxy into the same pro
 5. Enable the new Flutter flow behind a server-configurable feature flag or staged app release.
 6. Compare upload success rate, processing latency, storage usage, and CDN delivery errors.
 7. Migrate existing avatars lazily or with a one-time background job.
-8. Remove the old `uploads/` volume only after all production avatars have been verified in MinIO and backups are confirmed.
+8. Remove the old `uploads/` volume. *(Done before production; no avatars require migration.)*
 
 ## Recommended first implementation
 

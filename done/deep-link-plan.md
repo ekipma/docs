@@ -56,6 +56,7 @@ Implementation plan:
    - add Digital Asset Links at `https://app.ekipma.ir/.well-known/assetlinks.json` for verified App Links.
 
 5. Configure iOS:
+   - Deferred until an iOS release is planned.
    - add Associated Domains capability: `applinks:app.ekipma.ir`
    - add Apple App Site Association at `https://app.ekipma.ir/.well-known/apple-app-site-association`
    - optionally support a custom URL scheme as a fallback.

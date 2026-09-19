@@ -32,7 +32,7 @@ server {
 
 
 # cdn.ekipma.ir
-# Only avatar-public is exposed.
+# Only avatars is exposed.
 
 server {
     listen 443 ssl http2;
@@ -46,7 +46,7 @@ server {
             deny all;
         }
 
-        rewrite ^/avatars/(.*)$ /avatar-public/$1 break;
+        rewrite ^/avatars/(.*)$ /avatars/$1 break;
         proxy_pass http://127.0.0.1:9000;
         proxy_http_version 1.1;
 
@@ -68,7 +68,7 @@ The mapping is now explicit:
 
 ```text
 uploads.ekipma.ir/avatar-staging/... → MinIO avatar-staging/...
-cdn.ekipma.ir/avatars/...              → MinIO avatar-public/...
+cdn.ekipma.ir/avatars/...              → MinIO avatars/...
 ```
 
 The Go server should generate:

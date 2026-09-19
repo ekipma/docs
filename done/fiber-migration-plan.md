@@ -6,7 +6,7 @@ Status: done. Keep this document as historical migration context. Active follow-
 ## Current checkpoint
 
 - This pre-production project has no retained database data. Migrations are squashed into a single baseline migration for fresh installs; production startup validates schema only and never runs AutoMigrate. Apply schema with `make migrate-dev` / `make migrate-prod` before starting the server.
-- Server: Go toolchain 1.25.7, Fiber 3.0.0. The executable is Fiber-only and listens at `HTTP_ADDR` (default `127.0.0.1:8086`); real readiness, shutdown, request IDs, recovery, limits, deadlines, version checking, and explicit `HTTP_ALLOWED_ORIGINS` are implemented. Forwarded IPs are not trusted. The gRPC adapter, middleware, and helpers are removed; `go.mod` no longer contains gRPC, protobuf, or `ekipma-api` modules.
+- Server: Go toolchain 1.25.7, Fiber 3.0.0. The executable is Fiber-only and listens at `HTTP_ADDR` (default `127.0.0.1:8085`); real readiness, shutdown, request IDs, recovery, limits, deadlines, version checking, and explicit `HTTP_ALLOWED_ORIGINS` are implemented. Forwarded IPs are not trusted. The gRPC adapter, middleware, and helpers are removed; `go.mod` no longer contains gRPC, protobuf, or `ekipma-api` modules.
 - Shared `server/service/auth.go`: login, refresh, profile. HTTP DTOs in `server/httpapi/` are handwritten. `ekipma-api/openapi/ekipma.v1.yaml` now documents the implemented REST routes, schemas, error envelope, record variants, and request fixtures. Do not run `compile.sh` casually because it publishes.
 - App: REST is the only transport. Handwritten `lib/models/api_types.dart` owns auth and record/payment enums; Dio-backed `RestClient` owns HTTP auth/profile/friends/records/store/avatar calls, JSON encoding, timeouts, and multipart upload. The generated API package, gRPC/protobuf dependencies, client channel, legacy fallback branches, protobuf form-error parsing, gRPC stream/error helpers, and direct `package:http` transport code are removed.
 - Crypto payments are removed from app/server runtime. Balances, plan upgrades and asset spending remain. No replacement provider is enabled. Unused non-crypto helper is preserved at `server/payments/zarinpal`.
@@ -30,7 +30,7 @@ Do not implement wallet/crypto endpoints. Existing unsupported token transfer, i
 
 ## Run and verify
 
-App URL: `--dart-define=EKIPMA_API_URL=http://127.0.0.1:8086`.
+App URL: `--dart-define=EKIPMA_API_URL=http://127.0.0.1:8085`.
 Choose a reachable dev host on devices; use verified HTTPS for remote/release traffic. Record UI requires a database that has the existing journal migration; there is no fallback transport.
 
 Available local executables:

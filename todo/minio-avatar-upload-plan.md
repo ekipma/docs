@@ -36,6 +36,7 @@ S3_BUCKET_AVATAR_PUBLIC=avatar-public
 S3_ACCESS_KEY=...
 S3_SECRET_KEY=...
 S3_PUBLIC_BASE_URL=https://cdn.ekipma.ir
+S3_UPLOAD_BASE_URL=https://uploads.ekipma.ir
 ```
 
 ## Phase 2: Image-processing boundary

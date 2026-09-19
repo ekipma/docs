@@ -41,12 +41,13 @@ server {
     ssl_certificate     /etc/letsencrypt/live/cdn.ekipma.ir/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/cdn.ekipma.ir/privkey.pem;
 
-    location /avatar-public/ {
+    location /avatars/ {
         limit_except GET HEAD {
             deny all;
         }
 
-        proxy_pass http://127.0.0.1:9000/avatar-public/;
+        rewrite ^/avatars/(.*)$ /avatar-public/$1 break;
+        proxy_pass http://127.0.0.1:9000;
         proxy_http_version 1.1;
 
         proxy_set_header Host $host;
@@ -67,19 +68,19 @@ The mapping is now explicit:
 
 ```text
 uploads.ekipma.ir/avatar-staging/... → MinIO avatar-staging/...
-cdn.ekipma.ir/avatar-public/...       → MinIO avatar-public/...
+cdn.ekipma.ir/avatars/...              → MinIO avatar-public/...
 ```
 
 The Go server should generate:
 
 ```text
-https://uploads.ekipma.ir/avatar-staging/...
+https://uploads.ekipma.ir/...
 ```
 
 for presigned uploads, and:
 
 ```text
-https://cdn.ekipma.ir/avatar-public/...
+https://cdn.ekipma.ir/avatars/...
 ```
 
 for final avatar URLs.

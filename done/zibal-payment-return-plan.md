@@ -20,7 +20,7 @@ The API domain and path above are examples; the deployed hostname must route to 
 - `POST /api/v1/me/token-purchases` creates an order and returns Zibal's hosted payment URL. `GET /api/v1/me/token-purchases/:id` provides authenticated status.
 - `GET /payments/zibal/callback` receives Zibal's browser redirect as query parameters, checks Zibal through inquiry/verify, credits an eligible purchase once, then redirects the browser to the web result page.
 - A backend sweep reconciles pending purchases when the browser never reaches the callback. The web result page is available at `/payment/result`. The mobile app has no payment deep-link registration or purchase UI yet.
-- Zibal's [IPG documentation](https://help.zibal.io/ipg/) defines the normal callback as a `GET` containing `trackId`, `orderId`, `success`, and `status`. Its start URL requires a matching `Referer`; future mobile checkout must account for this.
+- Zibal's [IPG documentation](https://help.zibal.ir/ipg/) defines the normal callback as a `GET` containing `trackId`, `orderId`, `success`, and `status`. Its start URL requires a matching `Referer`; future mobile checkout must account for this.
 
 ## Target browser flow
 

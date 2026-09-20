@@ -203,6 +203,6 @@ The purchase screen is ready when choosing an amount, paying, returning, and rec
 - [Existing browser return plan](zibal-payment-return-plan.md)
 - Backend: `server/service/token_payments.go`, `server/httpapi/token_purchases.go`, `server/models/token_purchase.go`, `server/config/config.go`.
 - Flutter: `app/lib/services/rest_client.dart`, `app/lib/bloc/user/purchase.dart`, `app/lib/router.dart`, and entry-point files listed above.
-- [Zibal IPG documentation](https://help.zibal.ir/ipg/) — provider reference to reconfirm during handoff implementation.
+- [Zibal IPG documentation](https://help.zibal.io/ipg/) — provider reference to reconfirm during handoff implementation.
 
 Out of scope: custom quantities, exact-shortfall purchases, standalone Premium sales, auto-renewal, discounts, a package catalog, a general promotion engine, and international monetization.

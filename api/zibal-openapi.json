@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://gateway.zibal.ir",
+      "url": "https://gateway.zibal.io",
       "description": "سرور اصلی درگاه پرداخت زیبال"
     }
   ],
@@ -46,11 +46,11 @@
     },
     {
       "name": "نشان اعتماد زیبال",
-      "description": "با توجه به لزوم جلب اعتماد مشتریان جهت انجام پرداختی امن و سریع، می‌توانید با قرار دادن کد زیر در قسمتی از وبسایت خود (مانند فوتر وبسایت)، مشتریان خود را از پردازش پرداخت‌ها توسط زیبال مطلع نمایید.\n\n**کد اسکریپت (پیشنهادی)**\n```html \n<script src=\"https://zibal.ir/trust/scripts/zibal-trust-v4.js\" type=\"text/javascript\"></script> \n```\n\n---\n\n**استفاده در Dark Mode**\n```html\n<script src=\"https://zibal.ir/trust/scripts/zibal-trust-v4.js?theme=dark\" type=\"text/javascript\"></script>\n```\n\n---\n\nپس از قراردادن این تکه کد، نشان اعتماد زیبال به شکل زیر در وبسایت شما نمایش داده خواهد شد.\n\n![پرداخت آنلاین زیبال](https://zibal.ir/trust/assets/1.png)\n![پرداخت آنلاین زیبال](https://zibal.ir/trust/assets/2.png)\n\n---\n\n#### نمونه‌ای از تنظیم استایل یا ابعاد برای لوگوی تصویر:\n\nبا تغییر مقدار height (که در این مثال 200px در نظر گرفته شده)، می‌توانید ابعاد تصویر را به اندازه‌ی دلخواه تنظیم کنید.\n\n```html \n<html lang='en'>  <head>\n  <meta charset='UTF-8'>\n  <meta name='viewport' content='width=device-width, initial-scale=1'>\n  <title>Document</title>\n  <style>\n    #zibal{\n        margin: auto;\n    }\n    #zibal img{\n      height: 200px!important;\n    }\n  </style>\n</head>\n<body>\n  <div id='zibal'>\n    <script src=\"https://zibal.ir/trust/scripts/zibal-trust-v4.js\" type=\"text/javascript\"></script>\n  </div>\n</body> \n</html> \n```\n\n---\n\n**استفاده در Next.js**\nهمانطور که میدانید در پروژه های Next.js میبایست از تگ Script استفاده کرد.\n```javascript\nimport Script from \"next/script\";\n\n<div id='zibal'>\n<Script src=\"https://zibal.ir/trust/scripts/zibal-trust-v4.js\" type=\"text/javascript\"/>\n</div>\n```\n\n#### استفاده به صورت HTML خالص (روش جایگزین)\n\nبرای نمایش نماد اعتماد زیبال بدون اسکریپت، می‌توانید از کد زیر استفاده کنید.\n\nدر آدرس بالا، مقدار `{SiteName}` را با دامنه سایت خود بدون `https://` جایگزین کنید. برای مثال اگر آدرس سایت شما `https://zibal.ir` است، مقدار نهایی باید `zibal.ir` باشد؛ یعنی لینک نهایی برای این مثال به شکل `https://gateway.zibal.ir/trustMe/zibal.ir` ساخته می‌شود.\n\n```html\n<div>\n  <a href=\"https://gateway.zibal.ir/trustMe/{SiteName}\" target=\"_blank\" rel=\"noopener\">\n    <img style=\"max-width: 110px; height: auto;\" src=\"https://zibal.ir/trust/assets/2.png\" />\n  </a>\n</div>\n```"
+      "description": "با توجه به لزوم جلب اعتماد مشتریان جهت انجام پرداختی امن و سریع، می‌توانید با قرار دادن کد زیر در قسمتی از وبسایت خود (مانند فوتر وبسایت)، مشتریان خود را از پردازش پرداخت‌ها توسط زیبال مطلع نمایید.\n\n**کد اسکریپت (پیشنهادی)**\n```html \n<script src=\"https://zibal.io/trust/scripts/zibal-trust-v4.js\" type=\"text/javascript\"></script> \n```\n\n---\n\n**استفاده در Dark Mode**\n```html\n<script src=\"https://zibal.io/trust/scripts/zibal-trust-v4.js?theme=dark\" type=\"text/javascript\"></script>\n```\n\n---\n\nپس از قراردادن این تکه کد، نشان اعتماد زیبال به شکل زیر در وبسایت شما نمایش داده خواهد شد.\n\n![پرداخت آنلاین زیبال](https://zibal.io/trust/assets/1.png)\n![پرداخت آنلاین زیبال](https://zibal.io/trust/assets/2.png)\n\n---\n\n#### نمونه‌ای از تنظیم استایل یا ابعاد برای لوگوی تصویر:\n\nبا تغییر مقدار height (که در این مثال 200px در نظر گرفته شده)، می‌توانید ابعاد تصویر را به اندازه‌ی دلخواه تنظیم کنید.\n\n```html \n<html lang='en'>  <head>\n  <meta charset='UTF-8'>\n  <meta name='viewport' content='width=device-width, initial-scale=1'>\n  <title>Document</title>\n  <style>\n    #zibal{\n        margin: auto;\n    }\n    #zibal img{\n      height: 200px!important;\n    }\n  </style>\n</head>\n<body>\n  <div id='zibal'>\n    <script src=\"https://zibal.io/trust/scripts/zibal-trust-v4.js\" type=\"text/javascript\"></script>\n  </div>\n</body> \n</html> \n```\n\n---\n\n**استفاده در Next.js**\nهمانطور که میدانید در پروژه های Next.js میبایست از تگ Script استفاده کرد.\n```javascript\nimport Script from \"next/script\";\n\n<div id='zibal'>\n<Script src=\"https://zibal.io/trust/scripts/zibal-trust-v4.js\" type=\"text/javascript\"/>\n</div>\n```\n\n#### استفاده به صورت HTML خالص (روش جایگزین)\n\nبرای نمایش نماد اعتماد زیبال بدون اسکریپت، می‌توانید از کد زیر استفاده کنید.\n\nدر آدرس بالا، مقدار `{SiteName}` را با دامنه سایت خود بدون `https://` جایگزین کنید. برای مثال اگر آدرس سایت شما `https://zibal.io` است، مقدار نهایی باید `zibal.io` باشد؛ یعنی لینک نهایی برای این مثال به شکل `https://gateway.zibal.io/trustMe/zibal.io` ساخته می‌شود.\n\n```html\n<div>\n  <a href=\"https://gateway.zibal.io/trustMe/{SiteName}\" target=\"_blank\" rel=\"noopener\">\n    <img style=\"max-width: 110px; height: auto;\" src=\"https://zibal.io/trust/assets/2.png\" />\n  </a>\n</div>\n```"
     },
     {
       "name": "اعلان تراکنش‌ها",
-      "description": "شما می‌توانید جهت اطلاع از تراکنش‌های موفقیت‌آمیز از ربات تلگرامی زیبال استفاده کنید.\nتنها کافی‌است وارد [ZibalBot](https://t.me/ZibalBot) شوید و ربات را به حساب کاربری خود متصل نمایید تا تمامی تراکنش‌های تمامی درگاه‌های پرداخت شما، در لحظه به اطلاع شما برسند.\n![ZibalBot](https://help.zibal.ir/wp-content/uploads/2026/06/zibalbot.png)\n"
+      "description": "شما می‌توانید جهت اطلاع از تراکنش‌های موفقیت‌آمیز از ربات تلگرامی زیبال استفاده کنید.\nتنها کافی‌است وارد [ZibalBot](https://t.me/ZibalBot) شوید و ربات را به حساب کاربری خود متصل نمایید تا تمامی تراکنش‌های تمامی درگاه‌های پرداخت شما، در لحظه به اطلاع شما برسند.\n![ZibalBot](https://help.zibal.io/wp-content/uploads/2026/06/zibalbot.png)\n"
     }
   ],
   "paths": {
@@ -173,7 +173,7 @@
                   "value": {
                     "merchant": "zibal",
                     "amount": 3000,
-                    "callbackUrl": "http://zibal.ir/callback",
+                    "callbackUrl": "http://zibal.io/callback",
                     "mobile": "09123456789",
                     "description": "Hello World !",
                     "orderId": "231",
@@ -246,7 +246,7 @@
           "شروع به پرداخت"
         ],
         "summary": "شروع به پرداخت",
-        "description": "شما می‌بایست trackId تراکنش (که در قسمت قبل دریافت کرده‌اید) را در url روبرو قرار داده و سپس کاربر را به ‌آن هدایت کنید، پس از باز شدن این آدرس در مرورگر، به درگاه پرداخت زیبال منتقل خواهید شد.\n\n**نکته مهم: ارسال Referrer الزامی است.**\n\nدرخواست شروع پرداخت باید همراه با هدر `Referer` ارسال شود و دامنه آن با وب‌سایت ثبت‌شده درگاه شما مطابقت داشته باشد؛ در غیر این صورت کاربر به درگاه پرداخت منتقل نخواهد شد.\n\n> توجه: نام این هدر طبق استاندارد HTTP همان `Referer` (با یک r) است و نباید `Referrer` نوشته شود؛ این غلط املایی از ابتدا در استاندارد HTTP ثبت شده و به همین شکل باقی مانده است.\n\n- **وب‌سایت‌ها:** اگر کاربر را از داخل سایت خود به این آدرس هدایت کنید، مرورگر به‌صورت خودکار هدر `Referer` را ارسال می‌کند و نیازی به اقدام اضافه نیست.\n- **اپلیکیشن‌های موبایل و بات‌ها:** در این حالت هدر `Referer` به‌صورت خودکار ارسال نمی‌شود و باید آن را به‌صورت دستی تنظیم کنید. برای آشنایی با نحوه صحیح تنظیم آن، [**راهنمای تنظیم Referrer**](https://help.zibal.ir/article/why-referrer-header-is-required) را مطالعه کنید.\n\n«نمونه درخواست از طریق مرورگر» و «نمونه درخواست از طریق اپلیکیشن موبایل» را می‌توانید از منوی پایین باکس نمونه درخواست روبرو انتخاب و مشاهده کنید.\n",
+        "description": "شما می‌بایست trackId تراکنش (که در قسمت قبل دریافت کرده‌اید) را در url روبرو قرار داده و سپس کاربر را به ‌آن هدایت کنید، پس از باز شدن این آدرس در مرورگر، به درگاه پرداخت زیبال منتقل خواهید شد.\n\n**نکته مهم: ارسال Referrer الزامی است.**\n\nدرخواست شروع پرداخت باید همراه با هدر `Referer` ارسال شود و دامنه آن با وب‌سایت ثبت‌شده درگاه شما مطابقت داشته باشد؛ در غیر این صورت کاربر به درگاه پرداخت منتقل نخواهد شد.\n\n> توجه: نام این هدر طبق استاندارد HTTP همان `Referer` (با یک r) است و نباید `Referrer` نوشته شود؛ این غلط املایی از ابتدا در استاندارد HTTP ثبت شده و به همین شکل باقی مانده است.\n\n- **وب‌سایت‌ها:** اگر کاربر را از داخل سایت خود به این آدرس هدایت کنید، مرورگر به‌صورت خودکار هدر `Referer` را ارسال می‌کند و نیازی به اقدام اضافه نیست.\n- **اپلیکیشن‌های موبایل و بات‌ها:** در این حالت هدر `Referer` به‌صورت خودکار ارسال نمی‌شود و باید آن را به‌صورت دستی تنظیم کنید. برای آشنایی با نحوه صحیح تنظیم آن، [**راهنمای تنظیم Referrer**](https://help.zibal.io/article/why-referrer-header-is-required) را مطالعه کنید.\n\n«نمونه درخواست از طریق مرورگر» و «نمونه درخواست از طریق اپلیکیشن موبایل» را می‌توانید از منوی پایین باکس نمونه درخواست روبرو انتخاب و مشاهده کنید.\n",
         "operationId": "startPayment",
         "parameters": [
           {
@@ -714,7 +714,7 @@
                   "value": {
                     "merchant": "zibal",
                     "amount": 3000,
-                    "callbackUrl": "http://zibal.ir/callback",
+                    "callbackUrl": "http://zibal.io/callback",
                     "mobile": "09123456789",
                     "description": "Hello World !",
                     "orderId": "231",

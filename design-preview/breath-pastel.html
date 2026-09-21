@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ekipma — Breathe pastel</title>
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem('ekipma-pastel-theme') === 'dark' ? 'dark' : 'light'; } catch { document.documentElement.dataset.theme = 'light'; }
+  </script>
   <link rel="stylesheet" href="breathe.css">
   <link rel="stylesheet" href="breath-pastel.css">
 </head>
@@ -17,6 +20,7 @@
 <main class="workspace">
   <aside class="guide">
     <p class="eyebrow">EXPLORE THE DESIGN</p>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false">Dark mode</button>
     <nav id="page-menu" aria-label="Preview pages">
       <a href="#home">01 <span>Home</span></a>
       <a href="#circles">02 <span>Circles & friends</span></a>

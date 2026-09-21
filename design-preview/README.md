@@ -1,5 +1,19 @@
 # Ekipma design preview
 
+## Room to breathe — colorful neon skin
+
+Open `/breathe-colorful.html` for the same ten-page Room to breathe experience with a richer color system:
+
+- pink for payments and owed money;
+- cyan for turns and navigation emphasis;
+- green for plans and RSVP states;
+- violet/lilac for Circles, shared surfaces, and the balance medallion;
+- soft ambient gradients, neon edges, and small animated light pulses.
+
+The structure and interactions are shared with `breathe.html`: page menu, browser Back, searchable Circles, friend and group details, activity filters, itemized payments, draft creation, RSVP, balance details, and settings. The home plan illustration shifts from the original green card to a violet/cyan night scene; green remains a deliberate type accent rather than a large surface.
+
+This is a CSS skin over the same local prototype data. It uses no external resources or build step. Example links: `/breathe-colorful.html#home`, `/breathe-colorful.html#plan`, and `/breathe-colorful.html#add`.
+
 ## Room to breathe — expanded design
 
 Open `/breathe.html` for a connected ten-page exploration of the selected direction:

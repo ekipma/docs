@@ -319,3 +319,47 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 :root[data-theme] .setting-row input[type="checkbox"]:checked {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12 4 4 8-8' fill='none' stroke='%23205749' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 21px 21px no-repeat, var(--mint);
 }
+
+/* Squircle surfaces: no perimeter paint, inset bevels, or button rings. */
+:root[data-theme] :is(.phone button, dialog button, .field, .search, .setting-row select) { border-width: 0; }
+:root[data-theme] :is(.action, .chips button, .add-types button, .segmented button,
+    .field, .search, .setting-row select, .theme-toggle, .reset, dialog header > button) {
+  border-radius: 28px;
+  corner-shape: squircle;
+}
+:root[data-theme] :is(.row, .upcoming, .summary-card, .split-preview, .payment-state, .landscape, dialog, .segmented) {
+  border-radius: 38px;
+  corner-shape: squircle;
+}
+:root[data-theme] :is(.record-icon, .avatar.crew, .avatar.home, .group-symbol) { border-radius: 20px; corner-shape: squircle; }
+:root[data-theme] :is(.row, .upcoming, .summary-card, .split-preview, .payment-state, .action, .record-icon)::after { content: none; }
+:root[data-theme] .action:not(.secondary):not(.ghost) {
+  background: radial-gradient(ellipse at 26% 28%, #e6fff54d, transparent 72%), linear-gradient(150deg, #a5ead5, #70d3bd);
+  box-shadow: 0 9px 22px -14px #48978530;
+}
+:root[data-theme] :is(.action.secondary, .action.ghost, .chips button, .add-types button, .field, .search, .setting-row select) {
+  box-shadow: 0 8px 20px -15px #65458618;
+}
+
+/* Filled navigation glyphs, with a small violet swell below the active tab. */
+:root[data-theme] #app-nav { padding: 7px 15px 12px; overflow: hidden; }
+:root[data-theme] #app-nav button,
+:root[data-theme] #app-nav .add-nav {
+  position: relative; min-width: 48px; width: 48px; min-height: 48px; height: 48px;
+  padding: 0; background: none; box-shadow: none; border: 0; border-radius: 0;
+  color: #9993a8;
+}
+:root[data-theme="dark"] #app-nav button { color: #a394b5; }
+:root[data-theme] #app-nav button .icon,
+:root[data-theme] #app-nav button[aria-current="page"] .icon {
+  width: 21px; height: 21px; padding: 0; fill: currentColor; stroke: none; color: inherit;
+  background: none; border-radius: 0; box-shadow: none;
+}
+:root[data-theme] #app-nav button[aria-current="page"] { color: #9870cd; }
+:root[data-theme="dark"] #app-nav button[aria-current="page"] { color: #c5a1ef; }
+:root[data-theme] #app-nav button[aria-current="page"]::after {
+  content: ''; position: absolute; width: 28px; height: 9px; left: 10px; bottom: -12px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0; corner-shape: round;
+  background: linear-gradient(145deg, #c8a9eb, #9c72d0); pointer-events: none;
+}
+:root[data-theme] #app-nav button:focus-visible { outline: 2px solid var(--lilac); outline-offset: -4px; border-radius: 12px; }

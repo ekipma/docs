@@ -7,12 +7,13 @@
   <script>
     try { document.documentElement.dataset.theme = localStorage.getItem('ekipma-pastel-theme') === 'dark' ? 'dark' : 'light'; } catch { document.documentElement.dataset.theme = 'light'; }
   </script>
-  <link rel="stylesheet" href="breathe.css">
-  <link rel="stylesheet" href="breath-pastel.css">
+  <link rel="stylesheet" href="assets/base.css">
+  <link rel="stylesheet" href="assets/theme.css?v=squircle-1">
+  <link rel="stylesheet" href="assets/intro.css?v=squircle-1">
 </head>
 <body>
 <header class="collection">
-  <a href="breath-neon.html">↖ Breathe Neon</a>
+  <a href="reference.png">View design reference ↗</a>
   <p class="eyebrow">EKIPMA / BREATHE PASTEL</p>
   <h1>Soft surfaces.<br><span>A brighter kind of Breathe.</span></h1>
   <p class="intro">Pearl surfaces, translucent lilac, and a little candy color. Soft layers, in daylight or after dark.</p>
@@ -22,6 +23,8 @@
     <p class="eyebrow">EXPLORE THE DESIGN</p>
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false">Dark mode</button>
     <nav id="page-menu" aria-label="Preview pages">
+      <a href="#welcome">00 <span>Welcome</span></a>
+      <a href="#launch">↗ <span>Returning launch</span></a>
       <a href="#home">01 <span>Home</span></a>
       <a href="#circles">02 <span>Circles & friends</span></a>
       <a href="#group/crew">03 <span>A Circle</span></a>
@@ -33,6 +36,7 @@
       <a href="#balance">09 <span>Balance details</span></a>
       <a href="#settings">10 <span>Your space</span></a>
     </nav>
+    <button class="reset" id="replay-launch" type="button" hidden>Replay launch → Home</button>
     <h2 id="page-description-title">Home</h2>
     <p id="page-description"></p>
     <div class="palette-note">
@@ -41,7 +45,7 @@
     </div>
     <p class="demo-note">Interactive sample · Drafts and RSVPs stay in this page. No real payments or invitations are sent.</p>
     <button class="reset" id="reset-demo">Reset demo</button>
-    <a class="old-link" href="breath-neon.html">Compare with Breathe Neon ↗</a>
+    <a class="old-link" href="studies/material.html">Material study ↗</a>
   </aside>
   <section class="device-area" aria-label="Interactive mobile app preview">
     <div class="phone">
@@ -51,15 +55,16 @@
       <nav id="app-nav" aria-label="App navigation"></nav>
       <div class="home-indicator"></div>
     </div>
-    <p class="device-note">Scroll inside the phone. All ten pages share the same design.</p>
+    <p class="device-note">Explore the welcome, launch, and ten app pages. Scroll inside the phone.</p>
   </section>
 </main>
 <dialog id="modal" aria-labelledby="modal-title"><header><h2 id="modal-title"></h2><button id="close-modal" aria-label="Close dialog">×</button></header><div id="modal-content"></div></dialog>
 <div id="toast" class="toast" role="status"></div>
 <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
-  <symbol id="i-home" viewBox="0 0 24 24"><path d="m5 10 7-6 7 6v10H5ZM10 20v-6h4v6"/></symbol>
-  <symbol id="i-circles" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/></symbol>
-  <symbol id="i-activity" viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h10"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M10.3 3.5a2.6 2.6 0 0 1 3.4 0l6.5 5.7c1.1 1 .4 2.8-1 2.8H19v6.2a2.8 2.8 0 0 1-2.8 2.8H14v-6h-4v6H7.8A2.8 2.8 0 0 1 5 18.2V12h-.2c-1.4 0-2.1-1.8-1-2.8Z"/></symbol>
+  <symbol id="i-circles" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4.5"/><circle cx="17" cy="10" r="3.5"/><path d="M1.5 19c0-3.5 2.6-5.7 6.5-5.7s6.5 2.2 6.5 5.7c0 1.4-1 2-2.4 2H3.9c-1.4 0-2.4-.6-2.4-2Zm14.2 2c.6-.6.8-1.4.8-2.3 0-1.8-.5-3.3-1.5-4.5 4.5-1 7.5 1.4 7.5 4.8 0 1.3-.9 2-2.1 2Z"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><rect x="3" y="12" width="4.5" height="9" rx="1.8"/><rect x="9.75" y="3" width="4.5" height="18" rx="1.8"/><rect x="16.5" y="8" width="4.5" height="13" rx="1.8"/></symbol>
+  <symbol id="i-nav-add" viewBox="0 0 24 24"><path d="M10 5a2 2 0 0 1 4 0v5h5a2 2 0 0 1 0 4h-5v5a2 2 0 0 1-4 0v-5H5a2 2 0 0 1 0-4h5Z"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
   <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></symbol>
@@ -70,7 +75,8 @@
   <symbol id="i-location" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
 </defs></svg>
-<script src="breathe.js"></script>
-<script src="breath-pastel.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/theme.js"></script>
+<script src="assets/intro.js"></script>
 </body>
 </html>

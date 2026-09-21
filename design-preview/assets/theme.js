@@ -1,4 +1,4 @@
-/* Keep variant copy accurate without changing the shared Breathe prototype. */
+/* Theme preference, preview copy, and accessible icon-only navigation. */
 (() => {
   const root = document.documentElement;
   const toggle = document.querySelector('#theme-toggle');
@@ -26,6 +26,7 @@
       const label = button.getAttribute('aria-label') || button.textContent.trim();
       button.setAttribute('aria-label', label);
       button.title = label;
+      if (button.classList.contains('add-nav')) button.querySelector('use').setAttribute('href', '#i-nav-add');
       // Preserve the SVG and its accessible name, without a second visual label.
       [...button.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).forEach(node => node.remove());
     });

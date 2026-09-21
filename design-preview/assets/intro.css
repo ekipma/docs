@@ -1,0 +1,57 @@
+/* A full-color welcome, using the same diffuse reflections as the approved orb. */
+.pastel-intro[hidden], #replay-launch[hidden] { display: none; }
+:root[data-theme] .phone[data-intro] {
+  background: radial-gradient(ellipse at 0% 20%, #d6b8ff8c, transparent 58%), radial-gradient(ellipse at 90% 74%, #7971ff70, transparent 52%), linear-gradient(155deg, #a17ae8, #8851de 52%, #7642ce);
+  color: #fff;
+  box-shadow: 0 28px 75px #8060ba1c;
+}
+:root[data-theme="dark"] .phone[data-intro] {
+  background: radial-gradient(ellipse at 0% 20%, #c5a1f466, transparent 58%), radial-gradient(ellipse at 90% 74%, #7971ff59, transparent 52%), linear-gradient(155deg, #9168d4, #7843c7 52%, #6036b1);
+}
+.phone[data-intro] :is(#app-header, #screen, #app-nav) { display: none; }
+.phone[data-intro] .status { color: #fff; position: relative; z-index: 1; }
+.phone[data-intro] .home-indicator { background: #edddff75; }
+.pastel-intro { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 26px 28px 14px; position: relative; overflow: auto; }
+.intro-brand { font-size: 25px; font-weight: 700; letter-spacing: -1.5px; margin: 0; color: #fff; }
+.intro-brand > span { color: #c3ffe5; }
+.intro-brand:focus, .intro-copy h1:focus { outline: none; }
+.intro-art { position: relative; width: calc(100% + 30px); margin: 22px -15px 4px; height: 310px; flex: none; isolation: isolate; }
+.art-haze { position: absolute; inset: 8% 5% 0; background: radial-gradient(ellipse, #e6baff4d, transparent 70%); filter: blur(22px); z-index: -1; }
+.circle-sculpture { position: absolute; width: 258px; height: 240px; left: 50%; top: 24px; transform: translateX(-50%) rotate(-13deg); filter: drop-shadow(6px 21px 16px #46238c30); }
+.sculpture-ring { position: absolute; display: block; width: 158px; height: 158px; border-radius: 50%; padding: 38px; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; }
+.ring-rose { top: 0; left: 1px; background: radial-gradient(ellipse at 24% 6%, #fff0ffcc, transparent 57%), conic-gradient(from 30deg, #f1a4d9, #bf66be, #e991d2, #ffd3ec, #f1a4d9); transform: rotate(-15deg); }
+.ring-cyan { top: 29px; right: 0; background: radial-gradient(ellipse at 22% 5%, #edffffd9, transparent 58%), conic-gradient(from 25deg, #a1e6ee, #62b8d2, #83d1e2, #d0fbff, #a1e6ee); transform: rotate(13deg); }
+.ring-mint { bottom: 0; left: 40px; background: radial-gradient(ellipse at 24% 6%, #f1ffefd9, transparent 58%), conic-gradient(from 25deg, #b0edd1, #5dbfaa, #8cdbc3, #e1ffdf, #b0edd1); transform: rotate(-7deg); }
+.sculpture-ring::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 2px 3px 8px #ffffff96, inset -3px -5px 11px #42499b1c; }
+.sculpture-ring::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(circle, transparent 45%, #66448b2b 52%, transparent 66%, #ffffff33 82%, transparent 99%); }
+.floating-receipt, .floating-calendar { position: absolute; display: grid; place-items: center; border-radius: 18px; filter: blur(.35px); }
+.floating-receipt { top: 8px; right: 11px; width: 53px; height: 65px; transform: rotate(17deg); background: radial-gradient(ellipse at 15% 5%, #ffe7f69c, transparent 67%), linear-gradient(145deg, #f7b3df, #d878bc); box-shadow: 4px 10px 24px #70348726; color: #fff1f9; }
+.floating-calendar { bottom: 7px; left: 0; width: 57px; height: 60px; transform: rotate(-17deg); background: radial-gradient(ellipse at 15% 5%, #edffedb3, transparent 67%), linear-gradient(145deg, #adf1d5, #71cdb9); box-shadow: 4px 10px 24px #423b9326; color: #f2fff6; }
+.intro-art svg { width: 39px; height: 43px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.art-spark { position: absolute; right: 11px; bottom: 29px; font-size: 25px; color: #f4d6ffb3; }
+.intro-copy { margin-top: 17px; }
+.intro-kicker { font-size: 8px; letter-spacing: 1.8px; color: #f0e3ff; margin-bottom: 13px; }
+.intro-copy h1 { font-size: 43px; font-weight: 700; line-height: 1.07; letter-spacing: -1.7px; margin: 0; color: #fff; }
+.intro-description { color: #f1e7fc; font-size: 13px; line-height: 1.65; margin-top: 17px; }
+.intro-start { margin-top: auto; padding-top: 25px; }
+.welcome-start { width: 100%; min-height: 53px; border: 0; border-radius: 28px; background: radial-gradient(ellipse at 18% 3%, #effffbb3, transparent 65%), linear-gradient(170deg, #a7f4dc, #62d4bd); color: #25584e; display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 14px; font-weight: 600; box-shadow: 0 9px 22px -12px #34378645; }
+.welcome-start svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.welcome-start:hover { filter: brightness(1.04); }
+.welcome-start:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.intro-start > p { font-size: 9px; text-align: center; color: #f0e1fc; margin: 14px 0 0; }
+.phone[data-intro="launch"] .pastel-intro { justify-content: center; padding-bottom: 80px; }
+.phone[data-intro="launch"] .intro-brand { order: 2; font-size: 37px; letter-spacing: -2px; text-align: center; margin-top: 25px; }
+.phone[data-intro="launch"] .intro-art { margin-top: 0; }
+.phone[data-intro="launch"] :is(.intro-copy, .intro-start) { display: none; }
+.is-launching .pastel-intro { animation: launch-reveal 1.7s ease both; }
+@keyframes launch-reveal { 0% { opacity: 0; transform: translateY(8px); } 20%, 78% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-4px); } }
+@media (max-width: 360px) {
+  .pastel-intro { padding-left: 23px; padding-right: 23px; }
+  .intro-art { height: 286px; overflow: clip; }
+  .circle-sculpture { transform: translateX(-50%) rotate(-13deg) scale(.88); }
+  .intro-copy h1 { font-size: 38px; }
+  .floating-receipt { right: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .is-launching .pastel-intro { animation: none; } }
+.welcome-start { border-radius: 30px; corner-shape: squircle; background: radial-gradient(ellipse at 26% 28%, #e6fff54d, transparent 72%), linear-gradient(150deg, #a5ead5, #70d3bd); }
+.floating-receipt, .floating-calendar { corner-shape: squircle; }

@@ -1,5 +1,19 @@
 # Ekipma design preview
 
+## Interactive UX collection
+
+Open `/ux.html` for five new directions inspired by Signal, Outside, and Zero Noise:
+
+1. **Signal, with purpose** — a bold balance with separate credit/debt breakdowns and quick Circle access.
+2. **The weekend starts here** — an illustrated event home with time, location, details, and editable RSVP.
+3. **A little room to breathe** — an illustrated balance medallion and a small event preview.
+4. **One Circle at a time** — switch groups; the balance, record list, and record form follow that context.
+5. **Just what matters now** — choose a money or plans focus without losing sight of the other.
+
+Use the app's Home, Circles, Activity, and + controls. You can inspect balance breakdowns, open Circles, filter activity, join or leave the sample event, and save payment/turn/event drafts. Drafts appear in Activity and do not change the fixed sample balances. Each design has independent in-memory demo state; reload or use Reset to clear it. Escape or the close button dismisses dialogs. URL hashes select a design, e.g. `/ux.html#weekend`.
+
+This collection uses only `ux.html`, `ux.css`, and `ux.js`. No build, external resources, server writes, or Codex runtime is needed. The earlier collections are unchanged.
+
 ## New conceptual collection
 
 Open `/concepts.html` on the preview server for six separate compositions with one dominant focus:

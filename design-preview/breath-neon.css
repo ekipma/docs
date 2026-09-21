@@ -1,0 +1,161 @@
+/* A fresh color treatment built on the original Breathe layout. */
+:root {
+  --bg: #111115;
+  --surface: #1d1c24;
+  --raised: #292530;
+  --border: #302d37;
+  --text: #f8f2f6;
+  --muted: #b6abbc;
+  --pink: #f59ac5;
+  --cyan: #91d7e3;
+  --green: #a0dcb7;
+  --lilac: #cbb5f1;
+  --rose-fill: #e7a5c4;
+  --sky-fill: #a8b8ec;
+  --mint-fill: #abd7c1;
+  --peach-fill: #eac2a5;
+  --on-pastel: #292337;
+}
+
+/* The review surface stays quiet around the app. */
+body { background: #19181d; }
+.collection h1 > span { color: #c4afd6; }
+.collection > .eyebrow { color: #c7afcd; }
+.guide h2 { color: #f3eaf4; }
+#page-menu a[aria-current="page"] { background: #302736; }
+.neon-palette { display: grid; grid-template-columns: repeat(2, 12px); gap: 4px; flex: none; margin-top: 4px; }
+.neon-palette i { width: 12px; height: 12px; border-radius: 4px; background: var(--rose-fill); }
+.neon-palette i:nth-child(2) { background: var(--cyan); }
+.neon-palette i:nth-child(3) { background: var(--mint-fill); }
+.neon-palette i:nth-child(4) { background: var(--sky-fill); }
+
+/* No page-wide halos: light belongs to the medallion and illustrated sun. */
+.phone { border-color: #3d3744; box-shadow: 0 24px 65px #0004; }
+.brand > span { color: #ec90bc; }
+.profile-button { background: #c4afe4; color: #30233f; border: 0; }
+.home-intro .eyebrow { color: #b2a5b9; }
+.home-intro .editorial { color: #f8eef5; }
+.medallion {
+  border: 0;
+  background: radial-gradient(ellipse at 24% 13%, #805168 0%, #654060 29%, #43314f 63%, #29253b 100%);
+  box-shadow: 0 16px 44px #854a751c, inset 0 1px 0 #e4b2d019;
+}
+.medallion:after { inset: 11px; border-color: #dec1e026; }
+.medallion .star { color: #ffd0df; text-shadow: 0 0 15px #ffc2d33b; }
+.medallion .amount { color: #fff5f9; }
+.medallion .amount > span { color: #e7c3d9; }
+.medallion > .subtext { color: #dbc9de; }
+.balance-pair small { color: #c0b1c7; }
+.balance-pair strong { color: #f4e5f0; }
+.balance-pair button + button { border-color: #38313f; }
+.balance-pair button:hover { background: #ffffff04; }
+
+/* One confident color block beneath the balance, with a warmer illustration. */
+.upcoming {
+  background: #acb7e2;
+  color: #252b48;
+  border: 0;
+  min-height: 116px;
+}
+.upcoming .type-label { color: #3a405a; }
+.upcoming .type-label i { width: 5px; height: 5px; background: #286047; }
+.upcoming strong { color: #232741; }
+.upcoming small { color: #404763; }
+.mini-art:before { background: #f9dcb3; box-shadow: 0 0 19px #ffddb548; }
+.mini-art:after { background: #66719e; }
+.text-button { color: #d1bddf; }
+.row { border-color: #302c35; }
+.row-copy strong { color: #f4ecf3; }
+.row-copy small { color: #b5a8bf; }
+.row-end { color: #e9d8ed; }
+.row-end small { color: #b5a8bf; }
+.row:hover { background: #ffffff03; }
+
+/* People get color through their portraits, not a colored frame around every row. */
+.avatar, .friend-heading .avatar { background: var(--rose-fill); color: #4c2d43; border: 0; }
+.avatar.cool { background: var(--sky-fill); color: #303c5d; }
+.avatar.warm { background: var(--peach-fill); color: #593c2c; }
+.avatar.crew { background: #c8b0e2; color: #48335d; }
+.avatar.home { background: #a8c7d3; color: #2c4752; }
+.avatar-stack span { background: #b992bb; color: #39283e; }
+.avatar-stack span:nth-child(2) { background: var(--peach-fill); color: #573c31; }
+.avatar-stack span:nth-child(3) { background: var(--sky-fill); color: #303b5a; }
+.group-symbol { background: #c8b0e2; color: #49345b; border: 0; }
+.summary-card {
+  background: #453652;
+  border: 0;
+}
+.summary-card .eyebrow, .summary-card .subtext { color: #d9c7e2; }
+.summary-card .amount { color: #fff3fa; }
+.summary-card .amount > span { color: #d9bfdf; }
+.summary-card:has(.record-icon.turn) { background: #263f47; }
+.summary-card:has(.record-icon.turn) .subtext { color: #c1d9df; }
+
+/* Record-type identity stays consistent in lists, filters, and forms. */
+.record-icon { background: #e7a5c4; color: #56283f; }
+.record-icon.turn { background: #91d1df; color: #204e5b; }
+.record-icon.event { background: #a5d4b8; color: #284f3b; }
+.search { background: #222029; border: 1px solid #35303d; color: #bfabc9; }
+.search input::placeholder, .field::placeholder { color: #b1a3bb; }
+.segmented { background: #24202b; }
+.segmented button { color: #c1b1cc; }
+.segmented button[aria-pressed="true"] { background: #c9b3e1; color: #32253f; }
+.chips button { color: #c8b8d1; border-color: #413748; }
+.chips button[aria-pressed="true"] { background: #c9b3e1; color: #32253f; border-color: transparent; }
+.chips [data-filter="payment"][aria-pressed="true"] { background: var(--rose-fill); color: #56283f; }
+.chips [data-filter="turn"][aria-pressed="true"] { background: var(--cyan); color: #204e5b; }
+.chips [data-filter="event"][aria-pressed="true"] { background: var(--mint-fill); color: #284f3b; }
+.action { background: #d3b8e8; color: #352442; }
+.action.secondary { background: #25202c; border: 1px solid #46394f; color: #e0caec; }
+.action.ghost { color: #d6c0e0; border-color: #514257; }
+.action:hover { filter: brightness(1.04); }
+.add-types button { border-color: #413546; color: #c5b2cf; }
+.add-types [aria-pressed="true"] { background: var(--rose-fill); color: #56283f; border-color: transparent; }
+.add-types [data-type="turn"][aria-pressed="true"] { background: var(--cyan); color: #204e5b; border-color: transparent; }
+.add-types [data-type="event"][aria-pressed="true"] { background: var(--mint-fill); color: #284f3b; border-color: transparent; }
+.field { background: #211c27; border-color: #46384f; }
+.field:focus { border-color: #b398c5; }
+.split-preview { background: #3b2b40; border: 0; }
+.split-preview > span { color: #d8c1db; }
+.split-preview > strong { color: #ffe3f0; }
+.page:has([data-type="turn"][aria-pressed="true"]) .split-preview { background: #213b43; }
+.page:has([data-type="turn"][aria-pressed="true"]) .split-preview > span { color: #c3d7dc; }
+.page:has([data-type="turn"][aria-pressed="true"]) .split-preview > strong { color: #d4f5ff; }
+.payment-state { background: #382637; border: 0; color: #e8bdd6; }
+.form-note, .date-label { color: #bda8c7; }
+
+/* A periwinkle sky, apricot sunlight, and layered plum hills. */
+.landscape { background: #aab7df; border: 0; }
+.landscape .sun { background: #ffdfae; box-shadow: 0 0 26px #ffe6bb42; }
+.landscape .ridge.far { background: #8784b8; }
+.landscape .ridge { background: #626389; }
+.landscape > .caption { color: #f5e9f9; }
+.plan-heading .type-label { color: #b5cbbb; }
+.plan-heading .type-label > .icon { color: #a5d4b8; }
+.info-row > .icon { color: #bfa8d3; }
+.phone[data-route="plan"] .action:not(.secondary) { background: #b5d7c6; color: #244332; }
+.attendance { flex-wrap: wrap; gap: 4px 12px; }
+.attendance > span { font-size: 10px; color: #bcd9c7; }
+
+/* Matte navigation: small outline icons and a single pale add button. */
+#app-nav { background: var(--bg); border-top-color: #29262f; padding-top: 11px; }
+#app-nav button { color: #b0a3ba; gap: 5px; font-size: 10px; }
+#app-nav button .icon { width: 19px; height: 19px; stroke-width: 1.5; }
+#app-nav button[aria-current="page"] { color: #f5edf8; }
+#app-nav .add-nav { background: #eee4f4; color: #322737; width: 44px; min-width: 44px; }
+#app-nav .add-nav .icon { width: 22px; height: 22px; }
+.home-indicator { background: #cfc4d7; }
+.setting-row input { accent-color: #c5b0da; }
+dialog { background: #211927; border-color: #574361; box-shadow: 0 22px 70px #0006; }
+.toast { background: #ecd9eb; color: #382639; }
+
+/* Flex items must be able to shrink when names or values become longer. */
+.upcoming-copy, .row-copy, .info-row > div { min-width: 0; }
+.upcoming small, .info-row small, .detail-list dd { overflow-wrap: anywhere; }
+.field { min-width: 0; max-width: 100%; }
+
+@media (max-width: 360px) {
+  .upcoming { padding: 17px 12px; }
+  .upcoming .type-label { font-size: 8px; letter-spacing: .5px; }
+  .attendance > button { gap: 8px; }
+}

@@ -1,5 +1,20 @@
 # Ekipma design preview
 
+## Room to breathe — expanded design
+
+Open `/breathe.html` for a connected ten-page exploration of the selected direction:
+
+- Home with the balance medallion, a charcoal/lilac plan illustration, and readable friend balances.
+- Searchable Circles and friends, plus individual group and friend pages.
+- Filterable activity, a detailed plan with RSVP, and itemized payment details.
+- Payment, turn, and plan draft forms; balance breakdowns; a small settings page.
+
+Use the page menu to inspect a screen directly, or navigate inside the phone. Long pages scroll inside the device while the bottom navigation stays available. URL hashes support direct links and browser Back, e.g. `/breathe.html#friend/sara` or `/breathe.html#plan`.
+
+The green home card is replaced by charcoal/lilac scenery. Green remains a small plan-type accent; payment and turn identifiers retain pink and cyan. This palette carries through plan details.
+
+Interactive flows include people search, Circle selection, balance breakdowns, record filters, RSVP changes, contextual draft creation with a split preview, and list-spacing preferences. Everything is local sample data. Drafts do not change the balance totals; reload or Reset clears the demo. The three files `breathe.html`, `breathe.css`, and `breathe.js` need no build step or external resources. Earlier collections remain unchanged.
+
 ## Interactive UX collection
 
 Open `/ux.html` for five new directions inspired by Signal, Outside, and Zero Noise:

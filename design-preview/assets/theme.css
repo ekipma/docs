@@ -363,3 +363,44 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
   background: linear-gradient(145deg, #c8a9eb, #9c72d0); pointer-events: none;
 }
 :root[data-theme] #app-nav button:focus-visible { outline: 2px solid var(--lilac); outline-offset: -4px; border-radius: 12px; }
+
+/* Playful typography and color, with clean silhouettes on small objects. */
+body { font-family: 'Nunito', ui-rounded, system-ui, sans-serif; font-weight: 500; }
+.brand, .intro-brand { font-weight: 800; letter-spacing: -1px; }
+.page-title, .editorial, .group-cover h2, .friend-heading h2, .receipt-header h2, .plan-heading h2 { font-family: inherit; font-weight: 800; letter-spacing: -.9px; }
+.row-copy strong, .section-head h3, .upcoming strong, .info-row strong { font-weight: 800; }
+.amount { font-weight: 800; letter-spacing: -2.6px; }
+.balance-pair strong { font-weight: 800; }
+.form-label, .segmented button, .chips button, .add-types button, .action { font-weight: 800; }
+:root[data-theme] :is(.avatar, .avatar-stack span, .record-icon, .group-symbol, .profile-button, .landscape .sun) { border: 0; box-shadow: none; }
+:root[data-theme] :is(.avatar, .record-icon, .group-symbol, .profile-button)::before,
+:root[data-theme] :is(.avatar, .record-icon, .group-symbol, .profile-button)::after { content: none; }
+
+/* White labels use richer colored fills; text links retain their contrast. */
+:root[data-theme] .action:not(.secondary):not(.ghost) {
+  background: radial-gradient(ellipse at 24% 18%, #90d9be33, transparent 68%), linear-gradient(145deg, #318d73, #217760);
+  color: #fff; font-size: 13px;
+}
+:root[data-theme] :is(.action.secondary, .action.ghost) {
+  background: radial-gradient(ellipse at 24% 18%, #b598e138, transparent 68%), linear-gradient(145deg, #8860b9, #744ba4);
+  color: #fff;
+}
+:root[data-theme] :is(.segmented button[aria-pressed="true"], .chips button[aria-pressed="true"], .add-types button[aria-pressed="true"]) { color: #fff; }
+:root[data-theme] :is(.chips [data-filter="payment"][aria-pressed="true"], .add-types [data-type="payment"][aria-pressed="true"]) { background: linear-gradient(145deg, #c85a9b, #ab3e81); }
+:root[data-theme] :is(.chips [data-filter="turn"][aria-pressed="true"], .add-types [data-type="turn"][aria-pressed="true"]) { background: linear-gradient(145deg, #3a94a9, #26748d); }
+:root[data-theme] :is(.chips [data-filter="event"][aria-pressed="true"], .add-types [data-type="event"][aria-pressed="true"]) { background: linear-gradient(145deg, #398e73, #28795f); }
+
+/* A cheerful event surface, clearly green even against the violet balance. */
+:root[data-theme] .upcoming {
+  background: radial-gradient(ellipse at 16% 10%, #b1f3c959, transparent 65%), radial-gradient(ellipse at 92% 90%, #72d2b133, transparent 60%), linear-gradient(135deg, #389678, #277e68);
+  box-shadow: 0 13px 30px -19px #318b6a38;
+}
+:root[data-theme] .upcoming strong { color: #fff; font-size: 18px; }
+:root[data-theme] .upcoming :is(.type-label, small) { color: #f0fff6; }
+:root[data-theme] .upcoming .type-label i { background: #d5ffbc; }
+.mini-art:before { width: 25px; height: 25px; background: radial-gradient(ellipse at 25% 20%, #fff1c7, #ffcb86); box-shadow: none; }
+.mini-art:after { background: linear-gradient(145deg, #a0d9ac, #78ba96); clip-path: polygon(0 100%, 31% 37%, 47% 63%, 69% 12%, 100% 100%); }
+:root[data-theme] .balance-pair button:first-child small { color: #9864b2; }
+:root[data-theme] .balance-pair button:last-child small { color: #ac687e; }
+:root[data-theme="dark"] .balance-pair button:first-child small { color: #d8a8ee; }
+:root[data-theme="dark"] .balance-pair button:last-child small { color: #f0b1c9; }

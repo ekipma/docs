@@ -55,3 +55,8 @@
 @media (prefers-reduced-motion: reduce) { .is-launching .pastel-intro { animation: none; } }
 .welcome-start { border-radius: 30px; corner-shape: squircle; background: radial-gradient(ellipse at 26% 28%, #e6fff54d, transparent 72%), linear-gradient(150deg, #a5ead5, #70d3bd); }
 .floating-receipt, .floating-calendar { corner-shape: squircle; }
+.intro-copy h1 { font-weight: 800; letter-spacing: -1.2px; }
+.intro-brand { font-weight: 800; }
+.welcome-start { color: #25584e; background: radial-gradient(ellipse at 18% 3%, #effffbb3, transparent 65%), linear-gradient(170deg, #a7f4dc, #62d4bd); }
+/* The intro sculpture keeps its volume through color, not an outlined rim. */
+.sculpture-ring::after { content: none; }

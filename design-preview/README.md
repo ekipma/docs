@@ -27,6 +27,7 @@ Theme switching lives in the external design menu. Drafts and RSVPs are local de
 - `assets/theme.css` — pastel materials, light/dark colors, squircle components, and filled navigation
 - `assets/app.js` — sample data, routes, and app interactions
 - `assets/theme.js` — appearance preference and accessible icon-only navigation
+- `assets/fonts.css`, `assets/fonts/` — locally bundled Nunito and its SIL Open Font License
 - `assets/intro.css`, `assets/intro.js` — welcome and returning-launch previews
 - `studies/` — isolated material study and its cropped reference
 

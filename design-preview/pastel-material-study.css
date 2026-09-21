@@ -1,0 +1,47 @@
+:root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; color: #51465f; background: #eee9fa; }
+* { box-sizing: border-box; }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+main { max-width: 1040px; margin: auto; padding: 42px 32px 70px; }
+a { color: #746387; font-size: 12px; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid #7c4cb9; outline-offset: 5px; }
+.eyebrow { margin: 45px 0 14px; font-size: 10px; letter-spacing: 2px; color: #887397; }
+h1 { margin: 0; font-size: clamp(30px, 4vw, 44px); font-weight: 400; letter-spacing: -1.5px; }
+.intro { font-size: 13px; line-height: 1.8; color: #85758e; margin: 15px 0 0; }
+.comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; margin-top: 58px; }
+h2 { font-size: 13px; font-weight: 400; margin: 0 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+h2 span { font-size: 10px; color: #92819e; }
+.stage { min-height: 310px; display: grid; place-items: center; padding: 24px 0 46px; }
+.reference-stage img { width: 100%; max-width: 434px; height: auto; display: block; }
+.cloud-card {
+  width: calc(100% - 24px); max-width: 410px; aspect-ratio: 1.72;
+  position: relative; isolation: isolate; border-radius: 10% / 17%;
+  container-type: inline-size; color: #fff;
+  background: linear-gradient(135deg, #9878df 0%, #9466ed 34%, #864df4 66%, #8043e9 100%);
+  box-shadow: 0 4px 11px -6px #7445ac24, 0 20px 35px -18px #8050bc30;
+}
+/* The color fields are blurred independently; type and edges stay in focus. */
+.light { position: absolute; pointer-events: none; z-index: -1; filter: blur(20px); border-radius: 50%; }
+.light-lilac { left: -1%; top: 8%; width: 68%; height: 77%; background: radial-gradient(ellipse, #d3b5ff96, #c7a8ff29 52%, transparent 76%); }
+.light-blue { left: 4%; bottom: 0; width: 80%; height: 37%; background: radial-gradient(ellipse, #5b60ffd9, #6760ff57 45%, transparent 74%); }
+.light-pink { right: 1%; top: 0; width: 37%; height: 34%; background: radial-gradient(ellipse, #ceb1ff5c, transparent 74%); }
+.glass-edge { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 1px 3px #ffffff75, inset 1px 0 3px #f4e7ff38, inset -1px -1px 4px #5825b21a; }
+.card-top { display: flex; align-items: center; position: absolute; top: 5%; left: 5%; right: 5%; gap: 3%; }
+.folder { flex: none; width: 28%; overflow: visible; transform: rotate(-5deg); }
+.card-heading { align-self: flex-start; padding-top: 9%; white-space: nowrap; }
+.card-heading h3 { font-size: 6.35cqw; letter-spacing: -.2px; margin: 0; font-weight: 700; text-shadow: 0 1px 2px #6b3caf2e; }
+.card-heading p { font-size: 3.85cqw; margin: 5% 0 0; color: #e4d1f9; }
+.hand-arrow { position: absolute; right: 5%; top: 0; width: 18%; height: 65%; fill: none; stroke: #f8edff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; opacity: .85; }
+.storage { position: absolute; left: 8%; right: 8%; bottom: 18%; }
+.storage p { margin: 0 0 4%; font-size: 3.05cqw; color: #ecddff; }
+.meter { position: relative; height: 4.6cqw; border-radius: 30px; background: linear-gradient(180deg, #c6a5f98c, #bf96f6b3); box-shadow: inset 0 1px 3px #7340ae0f; }
+.meter-fill { position: absolute; inset: 0 30% 0 0; border-radius: inherit; background: linear-gradient(180deg, #c0ffe9, #70f7d8 38%, #41dfc2 80%, #41d3bc); box-shadow: inset 0 1px 2px #f3fffca1, 0 2px 5px #52eadb45, 0 0 14px #7ef6e052; }
+.meter-thumb { position: absolute; width: 8cqw; height: 8cqw; left: 70%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle at 35% 24%, #c4ffef, #6bedce 57%, #49d7bd); border: 2px solid #eafff2; box-shadow: inset 0 1px 3px #fff8, 0 2px 4px #47678857, 0 0 10px #a7ffe94d; }
+.note { max-width: 630px; margin: 30px 0 0; color: #8a7a96; font-size: 11px; line-height: 1.8; }
+@media (max-width: 700px) {
+  main { padding: 28px 22px 45px; }
+  .comparison { grid-template-columns: 1fr; gap: 25px; margin-top: 35px; }
+  .stage { min-height: 0; padding: 5px 0 28px; }
+  h2 { margin-bottom: 15px; }
+  .cloud-card { max-width: 410px; }
+}

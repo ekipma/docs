@@ -20,8 +20,15 @@
   toggle.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
   const refreshCopy = () => {
     if (document.querySelector('.phone').dataset.route === 'home') {
-      document.querySelector('#page-description').textContent = 'A luminous violet balance orb anchors the page. Pearl surfaces, pastel details, and a quiet plan card leave plenty of room for your people.';
+      document.querySelector('#page-description').textContent = 'A smooth violet balance orb, soft glass surfaces, and diffuse pastel shadows. Simple navigation keeps attention on your balance and your people. Compare light and dark using the design-menu toggle.';
     }
+    document.querySelectorAll('#app-nav button').forEach(button => {
+      const label = button.getAttribute('aria-label') || button.textContent.trim();
+      button.setAttribute('aria-label', label);
+      button.title = label;
+      // Preserve the SVG and its accessible name, without a second visual label.
+      [...button.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).forEach(node => node.remove());
+    });
     document.querySelectorAll('.setting-row').forEach(row => {
       if (row.firstElementChild?.firstChild?.textContent === 'Appearance') {
         row.querySelector('small').textContent = 'Breathe pastel';

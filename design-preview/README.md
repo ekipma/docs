@@ -1,5 +1,22 @@
 # Ekipma design preview
 
+## New conceptual collection
+
+Open `/concepts.html` on the preview server for six separate compositions with one dominant focus:
+
+1. **Signal** — oversized pink balance typography and a graphic accent.
+2. **Constellation** — Circles as a spatial arrangement of friends and groups.
+3. **Your move** — a cyan coffee-run ticket focused on the next turn.
+4. **Outside** — a green event poster with an abstract landscape.
+5. **Duet** — asymmetrical debt and credit panels.
+6. **Zero noise** — generous negative space and one balance figure.
+
+View them together or select a single concept. Previous/next controls move through the collection; the URL hash remembers the selected concept for sharing or reloading. Example: `/concepts.html#constellation`.
+
+This collection uses only local `concepts.html`, `concepts.css`, and `concepts.js`, with no build step, external fonts, CDN, or Codex dependencies. Product actions are illustrative. The original thirteen designs below are preserved.
+
+## Original collection
+
 A standalone browser preview with thirteen selectable home-screen styles. Use the numbered selector or previous/next buttons to compare:
 
 1. Soft matte

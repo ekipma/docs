@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ekipma — Breathe pastel</title>
   <script>
-    try { document.documentElement.dataset.theme = localStorage.getItem('ekipma-pastel-theme') === 'dark' ? 'dark' : 'light'; } catch { document.documentElement.dataset.theme = 'light'; }
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('ekipma-pastel-theme') === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.language = localStorage.getItem('ekipma-pastel-language') === 'fa' ? 'fa' : 'en';
+    } catch { document.documentElement.dataset.theme = 'light'; document.documentElement.dataset.language = 'en'; }
   </script>
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/base.css">
@@ -24,6 +27,7 @@
   <aside class="guide">
     <p class="eyebrow">EXPLORE THE DESIGN</p>
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false">Dark mode</button>
+    <button class="theme-toggle language-toggle" id="language-toggle" type="button" aria-label="Persian language" aria-pressed="false">فارسی</button>
     <nav id="page-menu" aria-label="Preview pages">
       <a href="#welcome">00 <span>Welcome</span></a>
       <a href="#launch">↗ <span>Returning launch</span></a>

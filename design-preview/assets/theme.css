@@ -49,7 +49,7 @@ body { background: #eee8fc; }
   background: radial-gradient(ellipse at 27% 12%, #eadbff94, transparent 59%), radial-gradient(ellipse at 83% 85%, #817cff57, transparent 48%), linear-gradient(150deg, #a77ee9, #8d51dc 58%, #7940cd);
   border: 0;
   isolation: isolate;
-  box-shadow: inset 3px 5px 14px #f5e9ff24, inset -4px -7px 18px #4f22950d, 0 16px 30px -12px #8051b936, 0 30px 55px -18px #9767da2b;
+  box-shadow: inset 3px 5px 14px #f5e9ff24, inset -4px -7px 18px #4f22950d, 0 0 34px 7px #e8dcff2a, 0 16px 30px -12px #8051b936, 0 30px 55px -18px #9767da2b;
 }
 /* Grazing reflections follow the silhouette, with a soft inward falloff. */
 .medallion:before {
@@ -208,7 +208,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 [data-theme="dark"] .header-back,
 [data-theme="dark"] .header-tag,
 [data-theme="dark"] .home-intro .eyebrow { color: #bdabcc; }
-[data-theme="dark"] .medallion { box-shadow: inset 3px 5px 14px #f5e9ff20, inset -4px -7px 18px #4f22950d, 0 16px 30px -12px #10082140, 0 30px 55px -18px #9767da1c; }
+[data-theme="dark"] .medallion { box-shadow: inset 3px 5px 14px #f5e9ff20, inset -4px -7px 18px #4f22950d, 0 0 34px 7px #d9c9ff2e, 0 16px 30px -12px #10082140, 0 30px 55px -18px #9767da1c; }
 [data-theme="dark"] .amount > span { color: #baa5ca; }
 [data-theme="dark"] .medallion .amount > span,
 [data-theme="dark"] .summary-card .amount > span { color: #fff; }
@@ -405,6 +405,11 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 
 /* Playful typography and color, with clean silhouettes on small objects. */
 body { font-family: 'Nunito', ui-rounded, system-ui, sans-serif; font-weight: 500; }
+html[data-language="fa"] .phone { font-family: 'Iranyekan', Tahoma, sans-serif; direction: rtl; }
+html[data-language="fa"] .phone .status { direction: ltr; }
+html[data-language="fa"] .phone .page-title,
+html[data-language="fa"] .phone .editorial { letter-spacing: 0; }
+html[data-language="fa"] .phone .amount { direction: ltr; }
 .brand, .intro-brand { font-weight: 800; letter-spacing: -1px; }
 .page-title, .editorial, .group-cover h2, .friend-heading h2, .receipt-header h2, .plan-heading h2 { font-family: inherit; font-weight: 800; letter-spacing: -.9px; }
 .row-copy strong, .section-head h3, .upcoming strong, .info-row strong { font-weight: 800; }

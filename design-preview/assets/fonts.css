@@ -4,3 +4,5 @@
 @font-face { font-family: 'Nunito'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/nunito-600.ttf') format('truetype'); }
 @font-face { font-family: 'Nunito'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/nunito-700.ttf') format('truetype'); }
 @font-face { font-family: 'Nunito'; font-style: normal; font-weight: 800; font-display: swap; src: url('fonts/nunito-800.ttf') format('truetype'); }
+@font-face { font-family: 'Iranyekan'; font-style: normal; font-weight: 400 800; font-display: swap; src: url('fonts/iranyekan.ttf') format('truetype'); }
+@font-face { font-family: 'Iranyekan'; font-style: normal; font-weight: 700 900; font-display: swap; src: url('fonts/iranyekan-bold.ttf') format('truetype'); }

@@ -21,7 +21,7 @@ Open http://localhost:8080. The root redirects to `breath-pastel.html`, preservi
 - `reference.png` — original visual reference
 - `studies/material.html` — reference card beside the material recreation
 
-Theme switching and payment-result scenario controls live in the external design menu. All account and product actions are simulated in memory and reset on reload. No real payments or invitations are sent. Use sample OTP `123456` and join code `SUNDAY`.
+Theme and English/Persian language switching live in the external design menu. Persian mode uses the bundled Iranyekan font, RTL app layout, and translated core labels; the surrounding design menu stays stable. All account and product actions are simulated in memory and reset on reload. No real payments or invitations are sent. Use sample OTP `123456` and join code `SUNDAY`.
 
 See [FEATURES.md](FEATURES.md) for coverage, differences from the Flutter app, and prototype limits, including the QR placeholder and dedicated Persian study.
 

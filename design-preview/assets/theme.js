@@ -116,6 +116,76 @@
     ['A violet welcome with a floating rose, cyan, and mint Circle sculpture. Get started opens account registration. Use the replay control to try the shorter returning launch.', 'یه خوش‌آمدگویی بنفش با حلقه‌های شناور صورتی، فیروزه‌ای و نعنایی. با «شروع کنیم» ثبت‌نام رو باز کن؛ یا ورود دوباره رو امتحان کن.'],
     ['The same artwork and wordmark, without a call to action. This preview stays still for inspection; Replay launch shows its short transition into Home.', 'همون تصویر و لوگو، بدون دکمه‌ی شروع. برای دیدن حرکت کوتاه ورود دوباره، «اجرای دوباره» رو بزن.']
   ]);
+  // Localize the supplied demo content without changing record IDs or stored data.
+  Object.entries({
+    ekipma: 'اکیپما', EKIPMA: 'اکیپما', Circles: 'جمع‌ها', Back: 'برگشت',
+    Sara: 'سارا', Amir: 'امیر', Mina: 'مینا', Reza: 'رضا', Nima: 'نیما', Hayyaun: 'حیان', Darya: 'دریا',
+    You: 'تو', 'Former member': 'عضو سابق', 'Weekend crew': 'جمع آخر هفته', Roommates: 'هم‌خونه‌ها',
+    'Friday pizza': 'پیتزای جمعه', 'Coffee run': 'نوبت قهوه', 'Sunday hike': 'کوه‌پیمایی یکشنبه', Groceries: 'خرید خونه',
+    'Sunday people': 'جمع یکشنبه‌ها', 'With friends': 'با دوست‌ها', Friend: 'دوست',
+    'Candy cloud': 'ابر آب‌نباتی', 'Little lagoon': 'مرداب کوچولو', 'Lucky clover': 'شبدر شانس',
+    'Darband trailhead, Tehran': 'تهران، ابتدای مسیر دربند', 'Darband trailhead': 'ابتدای مسیر دربند',
+    'e.g. Darband trailhead': 'مثلاً ابتدای مسیر دربند', 'Give it a name': 'یه اسم براش بذار',
+    'Anything your people should know?': 'چیزی هست که بقیه باید بدونن؟',
+    'Small plans. Great company.': 'برنامه‌های کوچیک، رفیق‌های خوب.',
+    'A little less admin. A little more home.': 'حساب‌وکتاب کمتر، آرامش بیشتر.',
+    'A little more outside.': 'یه کم بیشتر بریم بیرون.',
+    "You're owed": 'طلب تو', 'You’re owed': 'طلب تو', "↙ You're owed": '↙ طلب تو', '↙ You’re owed': '↙ طلب تو',
+    'Paid by you': 'تو پرداخت کردی', 'Paid by Sara': 'سارا پرداخت کرده',
+    payment: 'پرداخت', turn: 'نوبت', event: 'برنامه', PAYMENT: 'پرداخت', TURN: 'نوبت', PLAN: 'برنامه',
+    'NEW RECORD': 'ثبت جدید', 'Close dialog': 'بستن', 'App navigation': 'بخش‌های برنامه',
+    'YOUR PEOPLE': 'آدم‌های خودت', 'All Circles ↗': 'همه جمع‌ها ↗', '2 shared Circles': '۲ جمع مشترک',
+    Ali: 'علی', 'Full signal and battery': 'آنتن و باتری کامل', 'Show Circles': 'نمایش جمع‌ها', 'Record type': 'نوع مورد',
+    'e.g. Weekend crew': 'مثلاً جمع آخر هفته', 'What brings you together?': 'چی شما رو دور هم جمع کرده؟',
+    'Activity on 18 of the last 28 days': 'فعالیت در ۱۸ روز از ۲۸ روز گذشته',
+    'Payments 60 percent, turns 25 percent, plans 15 percent': 'پرداخت‌ها ۶۰ درصد، نوبت‌ها ۲۵ درصد، برنامه‌ها ۱۵ درصد',
+    'By phone or from contacts': 'با شماره تلفن یا از مخاطب‌هات', 'Create a Circle': 'یه جمع بساز',
+    'A home for something shared': 'جایی برای کارهای مشترکتون', 'Join a Circle': 'به یه جمع بپیوند',
+    'Have an invite?': 'دعوت‌نامه داری؟', 'Hide settled friends': 'دوست‌های تسویه‌شده رو پنهان کن',
+    'YOUR BALANCE IN THIS CIRCLE': 'حساب تو توی این جمع', 'Add record': 'ثبت جدید',
+    'Members, invitations, and settings': 'اعضا، دعوت‌ها و تنظیمات', 'SARA OWES YOU': 'سارا بهت بدهکاره',
+    'Across your shared Circles': 'توی جمع‌های مشترکتون', 'Add a shared record': 'یه مورد مشترک ثبت کن',
+    'Settle up': 'تسویه حساب', 'Repayments and confirmations': 'بازپرداخت‌ها و تأیید دریافت', 'Remove friend': 'حذف دوست',
+    'THE SHARED STORY': 'اتفاق‌های بین ما', TODAY: 'امروز', YESTERDAY: 'دیروز', 'COMING UP': 'پیش رو',
+    'See your patterns': 'ببین خرج‌هات چطور بوده', 'A little perspective on what you share': 'یه نگاه به کارهای مشترکتون',
+    'WEEKEND CREW': 'جمع آخر هفته', 'A little': 'بزنیم', 'outside time.': 'بیرون!',
+    'Sunday, September 27': 'یکشنبه، ۲۷ سپتامبر', '8:00–11:00 AM': '۸ تا ۱۱ صبح', 'Tehran time': 'به وقت تهران',
+    'Meet by the main entrance, Tehran.': 'قرارمون کنار ورودی اصلیه، تهران.',
+    'A slow morning with your people. Bring water, comfortable shoes, and a light jacket.': 'یه صبح آروم کنار رفیق‌ها. آب، کفش راحت و یه ژاکت سبک یادت نره.',
+    'Open Weekend crew': 'برو به جمع آخر هفته', 'Location & calendar': 'آدرس و تقویم', 'Delete plan': 'حذف برنامه',
+    'Total payment': 'مبلغ کل', 'Paid by': 'پرداخت‌کننده', Split: 'نحوه تقسیم', Equally: 'مساوی', 'The split': 'سهم هر نفر', 'Your share': 'سهم تو',
+    'THE FULL PICTURE': 'حساب‌وکتاب کامل', 'Across your people and Circles': 'بین همه دوست‌ها و جمع‌هات',
+    'A LITTLE MORE YOU': 'اینجا مال توئه', 'Language, spacing, and sync': 'زبان، فاصله‌ها و همگام‌سازی',
+    'YOUR PEOPLE ARE HERE': 'رفیق‌هات اینجان', Country: 'کشور', 'ONE LITTLE STEP': 'فقط یه قدم کوچیک',
+    'Find your people.': 'به جمع رفیق‌هات بپیوند.', 'Start with your phone number.': 'اول شماره تلفنت رو وارد کن.',
+    'Your number': 'شماره تو', 'I agree to the privacy policy and terms.': 'شرایط استفاده و سیاست حریم خصوصی رو می‌پذیرم.',
+    'Read privacy & terms': 'خوندن شرایط و حریم خصوصی', 'Send code': 'ارسال کد', 'Already have an account? Log in': 'حساب داری؟ وارد شو',
+    'Enter the six digits sent to your phone.': 'کد شش‌رقمی پیامک‌شده رو وارد کن.', Verify: 'تأیید شماره',
+    'For your people and whatever you share.': 'برای رفیق‌هات و کارهایی که با هم دارین.',
+    'Find friend': 'پیدا کردن دوست', 'Already in your phone?': 'شماره‌ش رو داری؟', 'Choose who to add.': 'انتخاب کن کی رو اضافه کنی.',
+    'FAMILIAR FACES': 'آشناهای خودت', 'Your people, closer.': 'رفیق‌هات همین نزدیکی‌ان.', 'You choose who comes along.': 'خودت انتخاب کن کی همراهت باشه.',
+    'Find people you know on Ekipma, then choose who to add.': 'آشناهات رو توی اکیپما پیدا کن و هر کی رو خواستی اضافه کن.',
+    'People on Ekipma': 'آشناهات توی اکیپما', 'Add selected friends': 'افزودن دوست‌های انتخاب‌شده', 'BETTER TOGETHER': 'با هم خوش می‌گذره',
+    'Invite code and QR': 'کد دعوت و بارکد', 'Show QR invitation': 'نمایش بارکد دعوت',
+    'You are up.': 'نوبت توئه!', 'Current turn': 'نوبت فعلی', Now: 'الان', 'Complete this turn': 'انجامش دادم',
+    'A repayment to confirm': 'یه بازپرداخت منتظر تأییدته', Name: 'نام', Email: 'ایمیل', Phone: 'تلفن', 'Save changes': 'ذخیره تغییرات',
+    'YOUR OWN RHYTHM': 'هر جور که تو راحتی', 'Preferences.': 'تنظیمات تو.', 'A little room or a little more detail.': 'خلوت‌تر دوست داری یا با جزئیات بیشتر؟',
+    'English': 'انگلیسی', 'Preview فارسی': 'پیش‌نمایش فارسی', 'THE BIGGER PICTURE': 'خرج‌هات در یک نگاه',
+    'YOUR SHARE': 'سهم تو', 'THIS WEEK': 'این هفته', 'THIS MONTH': 'این ماه', 'THIS YEAR': 'امسال', 'Shared moments': 'لحظه‌های مشترک',
+    'Shared expenses': 'خرج‌های مشترک', 'Circles this week': 'جمع‌های این هفته', 'Your share of expenses, separate from what friends owe you.': 'اینجا سهم تو از خرج‌هاست؛ طلبت از دوست‌ها جدا حساب می‌شه.',
+    'ALL CAUGHT UP': 'خبری رو از دست ندادی', 'Your shared story continues in Activity.': 'اتفاق‌های جمع‌تون رو توی بخش اتفاق‌ها دنبال کن.',
+    'Invited people.': 'دعوت‌شده‌ها.', 'Choose a Circle': 'یه جمع انتخاب کن', 'EKIPMA PLUS': 'اکیپما پلاس',
+    '30 days of Plus included with every successful token purchase.': 'با هر خرید موفق توکن، ۳۰ روز پلاس هم داری.',
+    'The story behind your expenses': 'ببین پولت کجا خرج شده', 'Automatic sync': 'همگام‌سازی خودکار',
+    'Shared records stay up to date while you’re here.': 'تا وقتی اینجایی، اطلاعات مشترکتون به‌روز می‌مونه.', 'View your patterns': 'دیدن گزارش خرج‌ها',
+    'Token balance': 'موجودی توکن', 'Add tokens ＋': 'خرید توکن ＋', '1 token = 10,000 Toman. Review your total before continuing.': 'هر توکن ۱۰٬۰۰۰ تومنه. قبل از ادامه، مبلغ کل رو بررسی کن.',
+    'YOUR LITTLE EXTRAS': 'یه چیز کوچیک برای خودت', 'Add tokens.': 'توکن بگیر.', 'Your next little extra.': 'یه تنوع کوچیک برای اکیپمات.',
+    'Choose a token pack to get started.': 'برای شروع یه بسته توکن انتخاب کن.', 'Purchase history.': 'خریدهای قبلی.',
+    'Nothing here yet.': 'هنوز چیزی اینجا نیست.', 'Your token purchases will appear here.': 'خریدهای توکن اینجا نمایش داده می‌شن.', 'Browse token packs': 'دیدن بسته‌های توکن',
+    'A LITTLE CLARITY': 'شفاف و روشن', 'This page reserves space for the approved privacy policy and terms.': 'متن نهایی شرایط استفاده و حریم خصوصی اینجا قرار می‌گیره.',
+    'Design placeholder only. Final legal text must be supplied before release.': 'این صفحه فعلاً نمونه‌ست. متن حقوقی نهایی باید قبل از انتشار اضافه بشه.',
+    'Back to your space': 'برگشت به صفحه خودت', 'Offline and error examples keep cached information readable.': 'توی حالت آفلاین یا خطا هم اطلاعات ذخیره‌شده رو می‌تونی ببینی.'
+  }).forEach(([key, value]) => faCopy.set(key, value));
   const syncTheme = () => {
     const dark = root.dataset.theme === 'dark';
     toggle.setAttribute('aria-pressed', String(dark));
@@ -128,9 +198,36 @@
   };
   const translateText = text => {
     if (faCopy.has(text)) return faCopy.get(text);
+    if (text.includes(' · ')) return text.split(' · ').map(part => translateText(part) || part).join(' · ');
+    let match;
+    if ((match = text.match(/^Remove (.+)$/))) return `حذف ${translateText(match[1]) || match[1]}`;
+    if ((match = text.match(/^(Week|Month|Year) expenses: (.+) dollars$/))) return `خرج‌های ${translateText(match[1])}: ${match[2]} دلار`;
+    if ((match = text.match(/^Settle with (.+)$/))) return `تسویه با ${translateText(match[1]) || match[1]}`;
+    if ((match = text.match(/^(.+) marked (\$[\d.]+) as repaid\. Confirm only after you receive it\.$/))) return `${translateText(match[1]) || match[1]} گفته ${match[2]} رو پس داده. فقط وقتی پول رو گرفتی تأیید کن.`;
+    if ((match = text.match(/^Record your repayment here\. (.+) confirms receiving it before your balance changes\.$/))) return `بازپرداختت رو اینجا ثبت کن. حسابت بعد از تأیید دریافت توسط ${translateText(match[1]) || match[1]} تغییر می‌کنه.`;
     const translated = text
+      .replace(/^You're owed (\$[\d.]+)$/, 'طلب تو: $1')
+      .replace(/^You owe (\$[\d.]+)$/, 'بدهی تو: $1')
+      .replace(/^(\d+) going$/, '$1 نفر میان')
+      .replace(/^Every (\d+) hours$/, 'هر $1 ساعت')
+      .replace(/^Round (\d+)$/, 'دور $1')
+      .replace(/^In (\d+) turns$/, '$1 نوبت دیگه')
+      .replace(/^I received (\$[\d.]+)$/, '$1 رو گرفتم')
+      .replace(/^Mark (\$[\d.]+) as repaid$/, '$1 رو پس دادم')
+      .replace(/^(\d+) tokens available$/, '$1 توکن داری')
+      .replace(/^(\d+) tokens$/, '$1 توکن')
+      .replace(/^(\d+) available$/, '$1 موجود')
+      .replace(/^([\d,]+) Toman$/, '$1 تومان')
+      .replace(/^(\d+) expenses$/, '$1 خرج')
+      .replace(/^Period (\d+)$/, 'بازه $1')
+      .replace(/^Payments (\d+%)$/, 'پرداخت‌ها $1')
+      .replace(/^Turns (\d+%)$/, 'نوبت‌ها $1')
+      .replace(/^Plans (\d+%)$/, 'برنامه‌ها $1')
       .replace(/^(\d+) people$/, '$1 نفر')
       .replace(/^(\d+) members$/, '$1 عضو')
+      .replace(/^All (\d+) Circle members$/, 'هر $1 نفر این جمع')
+      .replace(/^(\d+) shared Circles$/, '$1 جمع مشترک')
+      .replace(/^(\$[\d.]+) each$/, 'نفری $1')
       .replace(/^Position (\d+)$/, 'جایگاه $1');
     return translated === text ? null : translated;
   };
@@ -153,16 +250,16 @@
       if (!node.dataset.enLabel) node.dataset.enLabel = node.textContent.trim();
       node.textContent = fa ? (faCopy.get(node.dataset.enLabel) || node.dataset.enLabel) : node.dataset.enLabel;
     });
-    document.querySelectorAll('#screen, #app-header, #app-nav, .pastel-intro').forEach(node => { node.dir = fa ? 'rtl' : 'ltr'; });
+    document.querySelectorAll('#screen, #app-header, #app-nav, .pastel-intro, #modal, #toast').forEach(node => { node.dir = fa ? 'rtl' : 'ltr'; });
     document.querySelectorAll('#screen input, #screen textarea').forEach(input => {
       if (!input.dataset.enPlaceholder) input.dataset.enPlaceholder = input.placeholder || '';
       input.placeholder = fa ? (translateText(input.dataset.enPlaceholder) || input.dataset.enPlaceholder) : input.dataset.enPlaceholder;
     });
-    document.querySelectorAll('#screen option').forEach(option => {
-      if (!option.dataset.enText) option.dataset.enText = option.textContent.trim();
-      option.textContent = fa ? (translateText(option.dataset.enText) || option.dataset.enText) : option.dataset.enText;
+    // Only the untouched sample profile name is localized; user-entered names stay as typed.
+    document.querySelectorAll('#profile-form input[name="name"]').forEach(input => {
+      if (input.value === 'Hayyaun' || input.value === 'حیان') input.value = fa ? 'حیان' : 'Hayyaun';
     });
-    document.querySelectorAll('#screen [aria-label], #screen [title]').forEach(element => {
+    document.querySelectorAll('.phone [aria-label], .phone [title], #modal [aria-label]').forEach(element => {
       ['aria-label', 'title'].forEach(attribute => {
         const value = element.getAttribute(attribute);
         if (!value) return;
@@ -171,22 +268,25 @@
         element.setAttribute(attribute, fa ? (translateText(element.dataset[key]) || element.dataset[key]) : element.dataset[key]);
       });
     });
-    document.querySelectorAll('#screen *, .pastel-intro *, #page-description-title, #page-description, #replay-launch').forEach(element => {
+    document.querySelectorAll('#screen *, #app-header *, .pastel-intro *, #modal *, #toast, #page-description-title, #page-description, #replay-launch').forEach(element => {
       [...element.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).forEach(node => {
         const original = node.textContent.trim();
         if (!original) return;
-        if (!node.__enText) node.__enText = original;
-        const translated = fa ? translateText(node.__enText) : node.__enText;
+        if (!node.__enText || (original !== node.__enText && original !== node.__faText)) node.__enText = original;
+        node.__faText = translateText(node.__enText) || node.__enText;
+        const initial = element.matches('.avatar, .avatar-stack > span, .profile-button')
+          ? ({H:'ح', S:'س', A:'ا', M:'م', R:'ر', N:'ن', D:'د'})[node.__enText] : null;
+        if (initial) node.__faText = initial;
+        if (element.matches('.flow-chart small') && /^[MTWFS]$/.test(node.__enText)) {
+          const index = [...element.closest('.flow-chart').querySelectorAll('small')].indexOf(element);
+          node.__faText = ['د', 'س', 'چ', 'پ', 'ج', 'ش', 'ی'][index];
+        }
+        const translated = fa ? node.__faText : node.__enText;
         if (translated) node.textContent = node.textContent.replace(original, translated);
       });
     });
-    ['#page-description-title', '#page-description', '#replay-launch'].forEach(selector => {
-      const node = document.querySelector(selector);
-      if (!node) return;
-      if (!node.dataset.enText) node.dataset.enText = node.textContent.trim();
-      const translated = fa ? translateText(node.dataset.enText) : node.dataset.enText;
-      if (translated) node.textContent = translated;
-    });
+    // Discard our own text mutations, but observe later nested updates and dialogs.
+    languageObserver.takeRecords();
     syncingLanguage = false;
   };
   const setLanguage = language => {
@@ -217,6 +317,10 @@
     syncTheme();
     syncLanguage();
   };
+  const languageObserver = new MutationObserver(syncLanguage);
+  document.querySelectorAll('.phone, #modal, #toast').forEach(node => {
+    languageObserver.observe(node, { childList: true, subtree: true, characterData: true });
+  });
   new MutationObserver(refreshCopy).observe(document.querySelector('#screen'), { childList: true });
   refreshCopy();
 })();

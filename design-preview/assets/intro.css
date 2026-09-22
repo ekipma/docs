@@ -11,6 +11,8 @@
 .phone[data-intro] :is(#app-header, #screen, #app-nav) { display: none; }
 .phone[data-intro] .status { color: #fff; position: relative; z-index: 1; }
 .phone[data-intro] .home-indicator { background: #edddff75; }
+.phone[data-intro] .home-indicator { background: transparent; }
+.phone[data-intro] .home-indicator::before { background: #edddff75; }
 .pastel-intro { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 26px 28px 14px; position: relative; overflow: auto; }
 .intro-brand { font-size: 25px; font-weight: 700; letter-spacing: -1.5px; margin: 0; color: #fff; }
 .intro-brand > span { color: #c3ffe5; }

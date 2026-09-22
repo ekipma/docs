@@ -46,7 +46,7 @@ body { background: #eee8fc; }
 .editorial { font-family: inherit; font-weight: 500; letter-spacing: -1.2px; }
 .home-intro .eyebrow { color: #80718c; }
 .medallion {
-  background: radial-gradient(ellipse at 27% 12%, #eadbff94, transparent 59%), radial-gradient(ellipse at 83% 85%, #817cff57, transparent 48%), linear-gradient(150deg, #a77ee9, #8d51dc 58%, #7940cd);
+  /* background: radial-gradient(ellipse at 27% 12%, #eadbff94, transparent 59%), radial-gradient(ellipse at 83% 85%, #817cff57, transparent 48%), linear-gradient(150deg, #a77ee9, #8d51dc 58%, #7940cd); */
   border: 0;
   isolation: isolate;
   box-shadow: inset 3px 5px 14px #f5e9ff24, inset -4px -7px 18px #4f22950d, 0 0 34px 7px #e8dcff2a, 0 16px 30px -12px #8051b936, 0 30px 55px -18px #9767da2b;
@@ -434,21 +434,21 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 :root[data-theme] #app-nav button[aria-current="page"] { color: #9870cd; }
 :root[data-theme="dark"] #app-nav button[aria-current="page"] { color: #c5a1ef; }
 :root[data-theme] #app-nav button[aria-current="page"]::after {
-  content: ''; position: absolute; width: 28px; height: 9px; left: 10px; bottom: -12px;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0; corner-shape: round;
+  content: ''; position: absolute; width: 26px; height: 6px; left: 11px; bottom: -12px;
+  border-radius: 4px 4px 0 0; corner-shape: round;
   background: linear-gradient(145deg, #c8a9eb, #9c72d0); pointer-events: none;
 }
 :root[data-theme] #app-nav button:focus-visible { outline: 2px solid var(--lilac); outline-offset: -4px; border-radius: 12px; }
 
 /* The primary action floats above the quieter navigation icons. */
 :root[data-theme] #app-nav .add-nav {
-  width: 52px;
-  min-width: 52px;
-  height: 52px;
-  min-height: 52px;
+  width: 56px;
+  min-width: 56px;
+  height: 56px;
+  min-height: 56px;
   border-radius: 19px;
   corner-shape: squircle;
-  transform: translateY(-8px);
+  transform: translateY(-12px);
   color: #fff;
   background: radial-gradient(ellipse at 24% 0%, #fff1e78c, transparent 66%), linear-gradient(140deg, #e985bd, #ed8caa 52%, #f3b291);
   box-shadow: inset 0 1px 3px #ffffff73, 0 7px 17px -7px #df77af66, 0 12px 25px -10px #efac8c45;
@@ -472,7 +472,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 :root[data-theme] #app-nav .add-nav::after,
 :root[data-theme] #app-nav .add-nav[aria-current="page"]::after { content: none; }
 :root[data-theme] #app-nav .add-nav:hover { filter: brightness(1.06); }
-:root[data-theme] #app-nav .add-nav:active { transform: translateY(-8px) scale(.985); filter: brightness(.98); }
+:root[data-theme] #app-nav .add-nav:active { transform: translateY(-16px) scale(.985); filter: brightness(.98); }
 :root[data-theme] #app-nav .add-nav:focus-visible { outline: 2px solid var(--lilac); outline-offset: 4px; border-radius: 19px; }
 
 /* Continue the nav material through the device safe area. */

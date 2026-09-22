@@ -57,6 +57,6 @@
 .floating-receipt, .floating-calendar { corner-shape: squircle; }
 .intro-copy h1 { font-weight: 800; letter-spacing: -1.2px; }
 .intro-brand { font-weight: 800; }
-.welcome-start { color: #25584e; background: radial-gradient(ellipse at 18% 3%, #effffbb3, transparent 65%), linear-gradient(170deg, #a7f4dc, #62d4bd); }
+.welcome-start { color: #fff; font-weight: 800; font-size: 15px; background: radial-gradient(ellipse at 18% 3%, #effffbd6, transparent 65%), linear-gradient(170deg, #98f1d5, #3fc8b4); text-shadow: 0 1px 3px #27695722, 0 2px 8px #27695718, 0 5px 16px #27695710, 0 9px 26px #27695709, 0 13px 34px #27695707, 0 18px 46px #27695705; }
 /* The intro sculpture keeps its volume through color, not an outlined rim. */
 .sculpture-ring::after { content: none; }

@@ -11,7 +11,9 @@
 .flow-card .subtext { color:inherit; opacity:.78; }
 .flow-card.payment { background:var(--candy-pink); color:#773357; }
 .flow-card.cyan, .flow-card.turn { background:var(--candy-cyan); color:#245864; }
-.flow-card.mint, .flow-card.event { background:var(--candy-green); color:#285b46; }
+/* Legacy mint denotes general accent cards, separate from the green plan type. */
+.flow-card.mint { background:var(--candy-peach); color:#643651; }
+.flow-card.event { background:var(--candy-green); color:#285b46; }
 .flow-card .amount { margin:22px 0; }
 .flow-card .amount span { color:inherit; }
 .flow-card .eyebrow { color:inherit; }
@@ -22,7 +24,7 @@
 .flow-empty h3 { font-size:23px; letter-spacing:-.5px; margin:22px 0 12px; }
 .flow-empty > .subtext { max-width:270px; margin:0 auto 24px; }
 .flow-sculpture,.flow-auth-art { width:124px; height:124px; display:grid; place-items:center; margin:18px auto 30px; font-size:66px; color:#fff; background:var(--violet); border-radius:38px; corner-shape:squircle; box-shadow:var(--glass-shadow); text-shadow:0 6px 22px #57338428; transform:rotate(-7deg); }
-.flow-auth-art.mint { background:var(--mint); }
+.flow-auth-art.mint { background:var(--playful-action); }
 .flow-empty .row { text-align:start; }
 .flow-auth #app-nav { display:none; }
 .flow-auth .home-indicator { background:transparent; }

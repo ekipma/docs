@@ -12,6 +12,8 @@
   --green: #247558;
   --lilac: #7040cd;
   --violet: radial-gradient(ellipse at 12% 0%, #edc7ff66, transparent 59%), radial-gradient(ellipse at 100% 84%, #bd9dff33, transparent 52%), linear-gradient(145deg, #a17be9, #8750df 55%, #793fcd);
+  --playful-action: var(--violet);
+  --candy-peach: radial-gradient(ellipse at 12% 0%, #fff7e6a6, transparent 65%), radial-gradient(ellipse at 100% 92%, #ffb6d34d, transparent 58%), linear-gradient(140deg, #ffe0c5, #ffc7ba 62%, #f6b9ce);
   --mint: linear-gradient(170deg, #bcffe5, #77e3c8 55%, #53cbb8);
   --candy-pink: linear-gradient(145deg, #ffd9ef, #efa4db 65%, #e68bd0);
   --candy-cyan: linear-gradient(145deg, #d2f7ff, #93dfed 65%, #74cddb);
@@ -410,7 +412,8 @@ body { font-family: 'Nunito', ui-rounded, system-ui, sans-serif; font-weight: 50
 
 /* White labels use richer colored fills; text links retain their contrast. */
 :root[data-theme] .action:not(.secondary):not(.ghost) {
-  background: radial-gradient(ellipse at 24% 18%, #90d9be33, transparent 68%), linear-gradient(145deg, #318d73, #217760);
+  background: var(--playful-action);
+  box-shadow: 0 9px 22px -14px #8653ba45;
   color: #fff; font-size: 13px;
 }
 :root[data-theme] :is(.action.secondary, .action.ghost) {
@@ -422,14 +425,14 @@ body { font-family: 'Nunito', ui-rounded, system-ui, sans-serif; font-weight: 50
 :root[data-theme] :is(.chips [data-filter="turn"][aria-pressed="true"], .add-types [data-type="turn"][aria-pressed="true"]) { background: linear-gradient(145deg, #3a94a9, #26748d); }
 :root[data-theme] :is(.chips [data-filter="event"][aria-pressed="true"], .add-types [data-type="event"][aria-pressed="true"]) { background: linear-gradient(145deg, #398e73, #28795f); }
 
-/* A cheerful event surface, clearly green even against the violet balance. */
+/* Peach adds warmth to Home; the plan marker and scenery keep their green meaning. */
 :root[data-theme] .upcoming {
-  background: radial-gradient(ellipse at 16% 10%, #b1f3c959, transparent 65%), radial-gradient(ellipse at 92% 90%, #72d2b133, transparent 60%), linear-gradient(135deg, #389678, #277e68);
-  box-shadow: 0 13px 30px -19px #318b6a38;
+  background: var(--candy-peach);
+  box-shadow: 0 13px 30px -19px #d77f9540;
 }
-:root[data-theme] .upcoming strong { color: #fff; font-size: 18px; }
-:root[data-theme] .upcoming :is(.type-label, small) { color: #f0fff6; }
-:root[data-theme] .upcoming .type-label i { background: #d5ffbc; }
+:root[data-theme] .upcoming strong { color: #643651; font-size: 18px; }
+:root[data-theme] .upcoming :is(.type-label, small) { color: #79465c; }
+:root[data-theme] .upcoming .type-label i { background: #298261; }
 .mini-art:before { width: 25px; height: 25px; background: radial-gradient(ellipse at 25% 20%, #fff1c7, #ffcb86); box-shadow: none; }
 .mini-art:after { background: linear-gradient(145deg, #a0d9ac, #78ba96); clip-path: polygon(0 100%, 31% 37%, 47% 63%, 69% 12%, 100% 100%); }
 :root[data-theme] .balance-pair button:first-child small { color: #9864b2; }

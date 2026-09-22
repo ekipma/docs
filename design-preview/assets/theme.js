@@ -277,6 +277,9 @@
         const initial = element.matches('.avatar, .avatar-stack > span, .profile-button')
           ? ({H:'ح', S:'س', A:'ا', M:'م', R:'ر', N:'ن', D:'د'})[node.__enText] : null;
         if (initial) node.__faText = initial;
+        if (element.matches('.orb-count strong') && /^\d+$/.test(node.__enText)) {
+          node.__faText = new Intl.NumberFormat('fa').format(Number(node.__enText));
+        }
         if (element.matches('.flow-chart small') && /^[MTWFS]$/.test(node.__enText)) {
           const index = [...element.closest('.flow-chart').querySelectorAll('small')].indexOf(element);
           node.__faText = ['د', 'س', 'چ', 'پ', 'ج', 'ش', 'ی'][index];

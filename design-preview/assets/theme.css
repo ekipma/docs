@@ -65,6 +65,24 @@ body { background: #eee8fc; }
   mask-composite: exclude;
 }
 .medallion > * { position: relative; z-index: 1; }
+.medallion::before { animation: orb-highlight-pulse 8s ease-in-out infinite; }
+.medallion::after { animation: orb-fresnel-pulse 10s ease-in-out infinite; }
+.medallion .star { animation: orb-star-glow 6s ease-in-out infinite; }
+@keyframes orb-highlight-pulse {
+  0%, 100% { opacity: .9; }
+  50% { opacity: 1; }
+}
+@keyframes orb-fresnel-pulse {
+  0%, 100% { opacity: .82; }
+  50% { opacity: .94; }
+}
+@keyframes orb-star-glow {
+  0%, 100% { text-shadow: 0 2px 7px #54238c30; }
+  50% { text-shadow: 0 2px 10px #54238c45; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .medallion::before, .medallion::after, .medallion .star { animation: none; }
+}
 .medallion .star { color: #fff0cc; text-shadow: 0 2px 7px #54238c30; }
 .medallion .amount, .medallion .amount > span, .medallion > .subtext { color: #fff; }
 .amount > span { color: #82718e; }

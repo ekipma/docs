@@ -204,6 +204,7 @@
       }
     });
   };
+  const persianDigits = text => String(text).replace(/[0-9]/g, digit => '۰۱۲۳۴۵۶۷۸۹'[digit]);
   const translateText = text => {
     if (faCopy.has(text)) return faCopy.get(text);
     if (text.includes(' · ')) return text.split(' · ').map(part => translateText(part) || part).join(' · ');
@@ -261,7 +262,7 @@
     document.querySelectorAll('#screen, #app-header, #app-nav, .pastel-intro, #modal, #toast').forEach(node => { node.dir = fa ? 'rtl' : 'ltr'; });
     document.querySelectorAll('#screen input, #screen textarea').forEach(input => {
       if (!input.dataset.enPlaceholder) input.dataset.enPlaceholder = input.placeholder || '';
-      input.placeholder = fa ? (translateText(input.dataset.enPlaceholder) || input.dataset.enPlaceholder) : input.dataset.enPlaceholder;
+      input.placeholder = fa ? persianDigits(translateText(input.dataset.enPlaceholder) || input.dataset.enPlaceholder) : input.dataset.enPlaceholder;
     });
     // Only the untouched sample profile name is localized; user-entered names stay as typed.
     document.querySelectorAll('#profile-form input[name="name"], #account-form input[name="name"]').forEach(input => {
@@ -273,10 +274,10 @@
         if (!value) return;
         const key = `en${attribute.replace('-', '')}`;
         if (!element.dataset[key]) element.dataset[key] = value;
-        element.setAttribute(attribute, fa ? (translateText(element.dataset[key]) || element.dataset[key]) : element.dataset[key]);
+        element.setAttribute(attribute, fa ? persianDigits(translateText(element.dataset[key]) || element.dataset[key]) : element.dataset[key]);
       });
     });
-    document.querySelectorAll('#screen *, #app-header *, .pastel-intro *, #modal *, #toast, #page-description-title, #page-description, #replay-launch').forEach(element => {
+    document.querySelectorAll('#screen *, #app-header *, .status *, .pastel-intro *, #modal *, #toast, #page-description-title, #page-description, #replay-launch').forEach(element => {
       [...element.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).forEach(node => {
         const original = node.textContent.trim();
         if (!original) return;
@@ -291,6 +292,13 @@
         if (element.matches('.flow-chart small') && /^[MTWFS]$/.test(node.__enText)) {
           const index = [...element.closest('.flow-chart').querySelectorAll('small')].indexOf(element);
           node.__faText = ['د', 'س', 'چ', 'پ', 'ج', 'ش', 'ی'][index];
+        }
+        // Keep machine-readable addresses and invitation codes unchanged.
+        if (!/https?:\/\/|\S+@\S+|\b[A-Z]+\d+[A-Z\d-]*\b/.test(node.__enText)) {
+          node.__faText = persianDigits(node.__faText);
+          if (element.closest('.amount, .row-end, .balance-pair, .flow-stat-number, .selected-total')) {
+            node.__faText = node.__faText.replace(/\.(?=[۰-۹])/g, '٫').replace(/,(?=[۰-۹]{3})/g, '٬');
+          }
         }
         const translated = fa ? node.__faText : node.__enText;
         if (translated) node.textContent = node.textContent.replace(original, translated);

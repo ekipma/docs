@@ -404,3 +404,8 @@ body { font-family: 'Nunito', ui-rounded, system-ui, sans-serif; font-weight: 50
 :root[data-theme] .balance-pair button:last-child small { color: #ac687e; }
 :root[data-theme="dark"] .balance-pair button:first-child small { color: #d8a8ee; }
 :root[data-theme="dark"] .balance-pair button:last-child small { color: #f0b1c9; }
+.balance-stage { position: relative; width: 100%; }
+.live-object { position: absolute; z-index: 2; display: grid; place-items: center; pointer-events: none; font-weight: 800; }
+.object-receipt { width: 35px; height: 43px; left: 3%; top: 37px; transform: rotate(-16deg); border-radius: 12px; corner-shape: squircle; background: linear-gradient(145deg, #ffc9ea, #df72bd); color: #fff4ff; box-shadow: 6px 10px 18px #9b5ab226; font-size: 22px; }
+.object-spark { right: 5%; top: 18px; color: #dfb8ff; font-size: 27px; transform: rotate(15deg); text-shadow: 0 3px 12px #9e6dd63d; }
+.object-coin { width: 29px; height: 29px; right: 5%; bottom: 30px; border-radius: 50%; background: linear-gradient(145deg, #d7fff0, #79d5b7); color: #2f8b70; box-shadow: 4px 7px 15px #66b99b30; font-size: 19px; }

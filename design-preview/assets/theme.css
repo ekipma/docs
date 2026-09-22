@@ -174,7 +174,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 /* Dark surfaces retain the pastel objects and their original semantic colors. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #18151f;
+  --bg: #000;
   --surface: #25202e;
   --raised: #302839;
   --border: #3a3146;
@@ -203,7 +203,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 [data-theme="dark"] #page-menu a > span { color: #c4b4d2; }
 [data-theme="dark"] #page-menu a[aria-current="page"] { background: #3a2c4a; color: #d6b4ff; box-shadow: none; }
 [data-theme="dark"] #page-menu a[aria-current="page"] > span { color: #f0dfff; }
-[data-theme="dark"] .phone { background: radial-gradient(ellipse at 90% 48%, #69517a0f, transparent 64%), linear-gradient(155deg, #231e2c, #1c1823 70%, #211c29); border-color: #493c58; box-shadow: 0 28px 75px #100b1b40; }
+[data-theme="dark"] .phone { background: #000; border-color: #493c58; box-shadow: 0 28px 75px #100b1b40; }
 [data-theme="dark"] #screen { scrollbar-color: #4d3c60 transparent; }
 [data-theme="dark"] .header-back,
 [data-theme="dark"] .header-tag,
@@ -259,7 +259,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 [data-theme="dark"] .settings-profile small,
 [data-theme="dark"] .setting-row small { color: #bda5cb; }
 [data-theme="dark"] .setting-row select { background: #30243b; color: #e5c9f6; border-color: #503b61; }
-[data-theme="dark"] #app-nav { background: #282131a6; box-shadow: 0 -8px 25px #12091d08, inset 0 1px 0 #ffffff08; }
+[data-theme="dark"] #app-nav { background: #0e0b14; box-shadow: 0 -10px 26px #000a, inset 0 1px 0 #ffffff08; }
 [data-theme="dark"] #app-nav button, [data-theme="dark"] #app-nav .add-nav { color: #a497b1; }
 [data-theme="dark"] .home-indicator { background: #786289; }
 [data-theme="dark"] dialog { background: linear-gradient(145deg, #362b42f0, #292131eb); border-color: #c4a5dc1f; box-shadow: inset 0 1px 2px #ffffff0d, 0 24px 70px #08050c40; }
@@ -362,7 +362,12 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 }
 
 /* Filled navigation glyphs, with a small violet swell below the active tab. */
-:root[data-theme] #app-nav { padding: 7px 15px 12px; overflow: hidden; }
+:root[data-theme] #app-nav {
+  padding: 7px 15px 12px;
+  overflow: hidden;
+  border-radius: 26px 26px 0 0;
+  corner-shape: squircle;
+}
 :root[data-theme] #app-nav button,
 :root[data-theme] #app-nav .add-nav {
   position: relative; min-width: 48px; width: 48px; min-height: 48px; height: 48px;
@@ -395,7 +400,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
   content: ''; position: absolute; width: 100px; height: 3px; left: 50%; top: 10px;
   transform: translateX(-50%); border-radius: 3px; background: #c9b8dd;
 }
-:root[data-theme="dark"] .home-indicator { background: #282131a6; }
+:root[data-theme="dark"] .home-indicator { background: #0e0b14; }
 :root[data-theme="dark"] .home-indicator::before { background: #786289; }
 
 /* Playful typography and color, with clean silhouettes on small objects. */

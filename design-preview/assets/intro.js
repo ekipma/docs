@@ -45,8 +45,12 @@
       clearTimeout(timer);
       phone.classList.remove('is-launching');
     }
-    document.querySelector('#page-description-title').textContent = route === 'welcome' ? 'Life’s better in Circles.' : 'A familiar hello.';
-    document.querySelector('#page-description').textContent = route === 'welcome'
+    const descriptionTitle = document.querySelector('#page-description-title');
+    const description = document.querySelector('#page-description');
+    delete descriptionTitle.dataset.enText;
+    delete description.dataset.enText;
+    descriptionTitle.textContent = route === 'welcome' ? 'Life’s better in Circles.' : 'A familiar hello.';
+    description.textContent = route === 'welcome'
       ? 'A violet welcome with a floating rose, cyan, and mint Circle sculpture. Get started opens account registration. Use the replay control to try the shorter returning launch.'
       : 'The same artwork and wordmark, without a call to action. This preview stays still for inspection; Replay launch shows its short transition into Home.';
     document.querySelectorAll('#page-menu a').forEach(link => {
@@ -54,6 +58,7 @@
       else link.removeAttribute('aria-current');
     });
     if (replayRequested) runLaunch();
+    window.dispatchEvent(new Event('pastel-language-ready'));
   };
   intro.querySelector('.welcome-start').addEventListener('click', () => { location.hash = 'register'; });
   replay.addEventListener('click', () => {

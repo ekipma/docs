@@ -410,6 +410,13 @@ html[data-language="fa"] .phone .status { direction: ltr; }
 html[data-language="fa"] .phone .page-title,
 html[data-language="fa"] .phone .editorial { letter-spacing: 0; }
 html[data-language="fa"] .phone .amount { direction: ltr; }
+html[data-language="fa"] .phone :is(.row, .upcoming, .balance-pair button, .info-row, .setting-row, .settings-profile, .attendance, .action-row, .detail-list > div) {
+  direction: rtl;
+}
+html[data-language="fa"] .phone :is(.row, .upcoming, .balance-pair button) { text-align: right; }
+html[data-language="fa"] .phone .row-end { text-align: left; }
+html[data-language="fa"] .phone .upcoming .mini-art { order: -1; }
+html[data-language="fa"] .phone .detail-list dd { text-align: left; }
 .brand, .intro-brand { font-weight: 800; letter-spacing: -1px; }
 .page-title, .editorial, .group-cover h2, .friend-heading h2, .receipt-header h2, .plan-heading h2 { font-family: inherit; font-weight: 800; letter-spacing: -.9px; }
 .row-copy strong, .section-head h3, .upcoming strong, .info-row strong { font-weight: 800; }

@@ -109,7 +109,7 @@ body { background: #eee8fc; }
   min-height: 44px;
   padding: 7px 9px;
   border: 0;
-  border-radius: 16px;
+  border-radius: 24px;
   corner-shape: squircle;
   color: #fff;
   background: radial-gradient(ellipse at 18% 0%, #efffff38, transparent 65%), linear-gradient(145deg, #d5faff21, #c4eaff0a);

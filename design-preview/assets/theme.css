@@ -119,6 +119,19 @@ body { background: #eee8fc; }
   text-shadow: 0 2px 7px #42226730;
 }
 .orb-count.event { background: radial-gradient(ellipse at 18% 0%, #f1fff038, transparent 65%), linear-gradient(145deg, #d9ffe821, #ceffe40a); }
+.orb-counts::before, .orb-counts::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 7px;
+  width: 62px;
+  height: 46px;
+  border-radius: 50%;
+  filter: blur(22px);
+  pointer-events: none;
+}
+.orb-counts::before { inset-inline-start: 18%; background: #7be7ff38; }
+.orb-counts::after { inset-inline-end: 18%; background: #a0ffd333; }
 .orb-count .icon { width: 13px; height: 13px; color: #b9f3ff; flex: none; }
 .orb-count.event .icon { color: #ccffe4; }
 .orb-count strong { font-size: 17px; font-weight: 800; font-variant-numeric: tabular-nums; }
@@ -402,7 +415,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 /* Filled navigation glyphs, with a small violet swell below the active tab. */
 :root[data-theme] #app-nav {
   padding: 7px 15px 12px;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 26px 26px 0 0;
   corner-shape: squircle;
 }
@@ -426,6 +439,37 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
   background: linear-gradient(145deg, #c8a9eb, #9c72d0); pointer-events: none;
 }
 :root[data-theme] #app-nav button:focus-visible { outline: 2px solid var(--lilac); outline-offset: -4px; border-radius: 12px; }
+
+/* The primary action floats above the quieter navigation icons. */
+:root[data-theme] #app-nav .add-nav {
+  width: 52px;
+  min-width: 52px;
+  height: 52px;
+  min-height: 52px;
+  border-radius: 19px;
+  corner-shape: squircle;
+  transform: translateY(-8px);
+  color: #fff;
+  background: radial-gradient(ellipse at 24% 0%, #fff1e78c, transparent 66%), linear-gradient(140deg, #e985bd, #ed8caa 52%, #f3b291);
+  box-shadow: inset 0 1px 3px #ffffff73, 0 7px 17px -7px #df77af66, 0 12px 25px -10px #efac8c45;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+:root[data-theme] #app-nav .add-nav .icon { width: 27px; height: 27px; filter: drop-shadow(0 2px 4px #9c426330); }
+:root[data-theme] #app-nav .add-nav .icon,
+:root[data-theme] #app-nav .add-nav[aria-current="page"] .icon { color: #fff; fill: #fff; }
+:root[data-theme] #app-nav .add-nav[data-record-type="turn"] {
+  background: radial-gradient(ellipse at 24% 0%, #efffff8c, transparent 66%), linear-gradient(140deg, #66cbdc, #53bbd1 52%, #91e0e9);
+  box-shadow: inset 0 1px 3px #ffffff73, 0 7px 17px -7px #53bbd166, 0 12px 25px -10px #91e0e945;
+}
+:root[data-theme] #app-nav .add-nav[data-record-type="event"] {
+  background: radial-gradient(ellipse at 24% 0%, #f1fff38c, transparent 66%), linear-gradient(140deg, #75d5ad, #5bc7a4 52%, #a1e5bb);
+  box-shadow: inset 0 1px 3px #ffffff73, 0 7px 17px -7px #5bc7a466, 0 12px 25px -10px #a1e5bb45;
+}
+:root[data-theme] #app-nav .add-nav::after,
+:root[data-theme] #app-nav .add-nav[aria-current="page"]::after { content: none; }
+:root[data-theme] #app-nav .add-nav:hover { filter: brightness(1.06); }
+:root[data-theme] #app-nav .add-nav:active { transform: translateY(-8px) scale(.985); filter: brightness(.98); }
+:root[data-theme] #app-nav .add-nav:focus-visible { outline: 2px solid var(--lilac); outline-offset: 4px; border-radius: 19px; }
 
 /* Continue the nav material through the device safe area. */
 :root[data-theme] .home-indicator {

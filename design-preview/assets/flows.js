@@ -130,6 +130,11 @@ window.createPastelFlows = function (app) {
     return '';
   }
   function afterRender(name){
+    const addButton = $('#app-nav .add-nav');
+    if (addButton && ['add', 'review'].includes(name)) {
+      addButton.dataset.recordType = (name === 'review' ? ui.review?.type : ui.draft.type) || 'payment';
+      addButton.setAttribute('aria-current', 'page');
+    }
     const authPage=['login','register','otp','account'].includes(name);
     $('.phone').classList.toggle('flow-auth',authPage);
     if(authPage)$('#app-header').innerHTML=`<button class="header-back" data-go="${name==='login'||name==='register'?'welcome':name==='otp'?'register':'otp'}">${icon('back')} Back</button><span class="brand">ekipma<span>•</span></span>`;

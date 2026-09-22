@@ -27,6 +27,15 @@
 .flow-auth-art.mint { background:var(--playful-action); }
 .flow-empty .row { text-align:start; }
 .flow-auth #app-nav { display:none; }
+.auth-options { display:grid; gap:12px; margin-top:24px; }
+.auth-provider { width:100%; min-height:52px; padding:14px 18px; border:0; border-radius:19px; corner-shape:squircle; background:var(--glass-neutral); color:var(--text); font-size:14px; font-weight:800; box-shadow:var(--glass-shadow); }
+.auth-provider:hover { filter:brightness(1.05); }
+.auth-divider { display:flex; align-items:center; gap:14px; margin:18px 0; color:var(--muted); font-size:12px; }
+.auth-divider::before,.auth-divider::after { content:''; flex:1; height:1px; background:var(--border); }
+.auth-terms { margin-top:24px; font-size:11px; color:var(--muted); line-height:1.8; text-align:center; }
+.auth-number { margin-top:18px; font-size:16px; color:var(--muted); text-align:start; }
+.flow-auth:has(#register-form) .flow-auth-art { display:none; }
+.flow-auth #account-form .action,.flow-auth #otp-form .action { margin-top:24px; }
 .flow-auth .home-indicator { background:transparent; }
 .flow-inline { display:grid; grid-template-columns:88px minmax(0,1fr); gap:12px; }
 .flow-inline .field { min-width:0; padding-inline:10px; }

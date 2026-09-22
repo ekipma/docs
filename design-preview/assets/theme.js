@@ -119,6 +119,14 @@
   // Localize the supplied demo content without changing record IDs or stored data.
   Object.entries({
     ekipma: 'اکیپما', EKIPMA: 'اکیپما', Circles: 'جمع‌ها', Back: 'برگشت', Events: 'برنامه‌ها',
+    'Welcome to Ekipma.': 'به اکیپما خوش اومدی.', 'Your people, one tap away.': 'فقط یه قدم تا جمع رفیق‌هات.',
+    'Continue with Google': 'ادامه با گوگل', 'Continue with Apple': 'ادامه با اپل', 'Continue with phone': 'ادامه با شماره موبایل',
+    'Sign in / Join': 'ورود یا ثبت‌نام', or: 'یا', 'We’ll text you a sign-in code.': 'کد ورود رو برات پیامک می‌کنیم.',
+    'By continuing, you agree to our terms and privacy policy.': 'با ادامه، شرایط استفاده و سیاست حریم خصوصی رو می‌پذیری.',
+    'Check your messages.': 'پیامک‌هات رو ببین.', 'Enter the six-digit code.': 'کد شش‌رقمی رو وارد کن.', Continue: 'ادامه',
+    'This is how your friends will see you.': 'دوست‌هات تو رو با این اسم می‌بینن.',
+    'That code doesn’t match. Please try again.': 'کد درست نیست. یه بار دیگه امتحان کن.',
+    'Welcome to your Circles': 'به جمع رفیق‌هات خوش اومدی',
     Sara: 'سارا', Amir: 'امیر', Mina: 'مینا', Reza: 'رضا', Nima: 'نیما', Hayyaun: 'حیان', Darya: 'دریا',
     You: 'تو', 'Former member': 'عضو سابق', 'Weekend crew': 'جمع آخر هفته', Roommates: 'هم‌خونه‌ها',
     'Friday pizza': 'پیتزای جمعه', 'Coffee run': 'نوبت قهوه', 'Sunday hike': 'کوه‌پیمایی یکشنبه', Groceries: 'خرید خونه',
@@ -256,7 +264,7 @@
       input.placeholder = fa ? (translateText(input.dataset.enPlaceholder) || input.dataset.enPlaceholder) : input.dataset.enPlaceholder;
     });
     // Only the untouched sample profile name is localized; user-entered names stay as typed.
-    document.querySelectorAll('#profile-form input[name="name"]').forEach(input => {
+    document.querySelectorAll('#profile-form input[name="name"], #account-form input[name="name"]').forEach(input => {
       if (input.value === 'Hayyaun' || input.value === 'حیان') input.value = fa ? 'حیان' : 'Hayyaun';
     });
     document.querySelectorAll('.phone [aria-label], .phone [title], #modal [aria-label]').forEach(element => {

@@ -118,7 +118,7 @@
   ]);
   // Localize the supplied demo content without changing record IDs or stored data.
   Object.entries({
-    ekipma: 'اکیپما', EKIPMA: 'اکیپما', Circles: 'جمع‌ها', Back: 'برگشت',
+    ekipma: 'اکیپما', EKIPMA: 'اکیپما', Circles: 'جمع‌ها', Back: 'برگشت', Events: 'برنامه‌ها',
     Sara: 'سارا', Amir: 'امیر', Mina: 'مینا', Reza: 'رضا', Nima: 'نیما', Hayyaun: 'حیان', Darya: 'دریا',
     You: 'تو', 'Former member': 'عضو سابق', 'Weekend crew': 'جمع آخر هفته', Roommates: 'هم‌خونه‌ها',
     'Friday pizza': 'پیتزای جمعه', 'Coffee run': 'نوبت قهوه', 'Sunday hike': 'کوه‌پیمایی یکشنبه', Groceries: 'خرید خونه',

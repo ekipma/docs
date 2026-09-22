@@ -5,16 +5,16 @@
   const languageToggle = document.querySelector('#language-toggle');
   let syncingLanguage = false;
   const faCopy = new Map([
-    ['Home', 'خانه'], ['Circles & friends', 'حلقه‌ها و دوستان'], ['A Circle', 'یک حلقه'],
-    ['A friend', 'یک دوست'], ['Activity', 'فعالیت‌ها'], ['A plan', 'یک برنامه'],
+    ['Home', 'خونه'], ['Circles & friends', 'جمع‌ها و دوست‌ها'], ['A Circle', 'یک جمع'],
+    ['A friend', 'یک دوست'], ['Activity', 'اتفاق‌ها'], ['A plan', 'یک برنامه'],
     ['A payment', 'یک پرداخت'], ['Add a record', 'افزودن رکورد'], ['Balance details', 'جزئیات حساب'],
-    ['Your space', 'فضای تو'], ['Welcome', 'خوش آمدی'], ['Returning launch', 'ورود دوباره'],
-    ['Explore the design', 'بررسی طراحی'], ['Reset demo', 'بازنشانی نمونه'], ['Material study ↗', 'مطالعه متریال ↗'],
-    ['Room to breathe.', 'جا برای نفس کشیدن.'], ['Your people', 'آدم‌های تو'], ['All Circles', 'همه حلقه‌ها'],
-    ['Friends', 'دوستان'], ['Groups', 'گروه‌ها'], ['Latest together.', 'آخرین اتفاق‌ها'],
-    ['Payments', 'پرداخت‌ها'], ['Turns', 'نوبت‌ها'], ['Plans', 'برنامه‌ها'], ['Updates', 'به‌روزرسانی‌ها'],
+    ['Your space', 'فضای تو'], ['Welcome', 'خوش اومدی'], ['Returning launch', 'دوباره خوش اومدی'],
+    ['Explore the design', 'بریم سراغ طراحی'], ['Reset demo', 'نمونه رو از نو ببین'], ['Material study ↗', 'مطالعه متریال ↗'],
+    ['Room to breathe.', 'یه نفس راحت.'], ['Your people', 'آدم‌های خودت'], ['All Circles', 'همه جمع‌ها'],
+    ['Friends', 'دوست‌ها'], ['Groups', 'گروه‌ها'], ['Latest together.', 'تازه‌ترین اتفاق‌ها'],
+    ['Payments', 'پرداخت‌ها'], ['Turns', 'نوبت‌ها'], ['Plans', 'برنامه‌ها'], ['Updates', 'تازه‌ها'],
     ['Nothing new just yet.', 'فعلاً خبر تازه‌ای نیست.'], ['Open activity', 'باز کردن فعالیت‌ها'],
-    ['Your net balance', 'حساب خالص تو'], ["You're owed", 'از تو طلبکارند'], ['You owe', 'تو بدهکاری'],
+    ['Your net balance', 'خالص حساب تو'], ["You're owed", 'از تو طلب دارن'], ['You owe', 'تو بدهکاری'],
     ['A little outside time.', 'کمی وقت بیرون از خانه.'], ['Sunday hike · 8:00 AM', 'کوهنوردی یکشنبه · ساعت ۸'],
     ['Your patterns.', 'الگوهای تو.'], ['Better in Circles.', 'در حلقه‌ها بهتر است.'],
     ['Shared plans. Shared tabs. One place.', 'برنامه‌های مشترک، حساب‌های مشترک، یک‌جا.'],
@@ -25,12 +25,12 @@
     ['Invited people', 'افراد دعوت‌شده'], ['The little shop', 'فروشگاه کوچک'], ['Add tokens', 'افزودن توکن'],
     ['Search people or Circles', 'جست‌وجوی آدم‌ها یا حلقه‌ها'], ['List spacing', 'فاصله فهرست'],
     ['Plan reminders', 'یادآوری برنامه‌ها'], ['Appearance', 'ظاهر'], ['Language', 'زبان'],
-    ['The calm home.', 'خانه آرام'], ['People, before admin.', 'آدم‌ها، قبل از مدیریت'],
-    ['A Circle in context.', 'یک حلقه در متن'], ['A familiar face.', 'یک چهره آشنا'],
-    ['Easy to catch up.', 'مرور اتفاق‌ها آسان است'], ['An invitation, with the details.', 'دعوتی با همه جزئیات'],
-    ['Nothing hidden in the split.', 'هیچ چیز در تقسیم پنهان نیست'], ['A small, clear starting point.', 'یک شروع کوچک و روشن'],
-    ['Know who owes what.', 'بدان چه کسی چه‌قدر بدهکار است'], ['Search groups and friends', 'جست‌وجوی گروه‌ها و دوستان'],
-    ['View members', 'دیدن اعضا'], ['Your shared Circles', 'حلقه‌های مشترک تو'], ['Shared activity', 'فعالیت‌های مشترک'],
+    ['The calm home.', 'خونه‌ی آروم'], ['People, before admin.', 'اول آدم‌ها، بعد حساب‌وکتاب'],
+    ['A Circle in context.', 'یک جمع، همین‌جا و همین حالا'], ['A familiar face.', 'یه چهره‌ی آشنا'],
+    ['Easy to catch up.', 'از اتفاق‌ها جا نمی‌مونی'], ['An invitation, with the details.', 'دعوتی با همه‌چی سر جاش'],
+    ['Nothing hidden in the split.', 'تقسیمش روشن و بی‌دردسره'], ['A small, clear starting point.', 'از یه شروع ساده شروع کن'],
+    ['Know who owes what.', 'بدون کی به کی بدهکاره'], ['Search groups and friends', 'گروه‌ها و دوست‌ها رو پیدا کن'],
+    ['View members', 'دیدن اعضا'], ['Your shared Circles', 'جمع‌های مشترک تو'], ['Shared activity', 'اتفاق‌های مشترک'],
     ['Latest together', 'آخرین اتفاق‌ها'], ['Choose your Circle', 'حلقه‌ات را انتخاب کن'],
     ['Where do you share this record with ...?', 'این رکورد را با چه کسانی به اشتراک می‌گذاری؟'],
     ['No matches.', 'موردی پیدا نشد.'], ['Try a different name.', 'نام دیگری را امتحان کن.'],
@@ -108,13 +108,13 @@
     ['↗ You owe', '↗ تو بدهکاری'], ['All Circles ↗', 'همه حلقه‌ها ↗'], ['2 shared Circles', '۲ حلقه مشترک'],
     ['Owes you', 'به تو بدهکار است'], ['All activity ↗', 'همه فعالیت‌ها ↗'], ['Weekend crew · payment', 'گروه آخرهفته · پرداخت'],
     ['Roommates · turn', 'هم‌خانه‌ها · نوبت']
-    ,['Life’s better', 'زندگی بهتر است'], ['in Circles.', 'در حلقه‌ها.'], ['Life’s better in Circles.', 'زندگی در حلقه‌ها بهتر است.'], ['YOUR PEOPLE. YOUR CIRCLES.', 'آدم‌های تو. حلقه‌های تو.'],
-    ['Shared plans. Shared tabs.', 'برنامه‌های مشترک. حساب‌های مشترک.'], ['A little more together.', 'کمی بیشتر با هم.'],
-    ['Get started', 'شروع کنیم'], ['A little less admin. A lot more life.', 'کمی دردسر کمتر. زندگی خیلی بیشتر.'],
-    ['A familiar hello.', 'یک سلام آشنا.'], ['Welcome to Ekipma', 'به اکیپما خوش آمدی'],
+    ,['Life’s better', 'زندگی قشنگ‌تره'], ['in Circles.', 'وقتی با همیم.'], ['Life’s better in Circles.', 'با هم، زندگی قشنگ‌تره.'], ['YOUR PEOPLE. YOUR CIRCLES.', 'آدم‌های خودت، جمع‌های خودت'],
+    ['Shared plans. Shared tabs.', 'برنامه‌های مشترک، خرج‌های مشترک'], ['A little more together.', 'یه کم بیشتر کنار هم'],
+    ['Get started', 'شروع کنیم'], ['A little less admin. A lot more life.', 'دردسر کمتر، حالِ بیشتر'],
+    ['A familiar hello.', 'یه سلام آشنا'], ['Welcome to Ekipma', 'به اکیپما خوش اومدی'],
     ['Replay launch → Home', 'اجرای دوباره → خانه'],
-    ['A violet welcome with a floating rose, cyan, and mint Circle sculpture. Get started opens account registration. Use the replay control to try the shorter returning launch.', 'خوش‌آمدگویی بنفش با مجسمه‌ای شناور از حلقه‌های صورتی، فیروزه‌ای و نعنایی. شروع کنیم، ثبت‌نام را باز می‌کند. برای دیدن ورود کوتاه دوباره، اجرای مجدد را امتحان کن.'],
-    ['The same artwork and wordmark, without a call to action. This preview stays still for inspection; Replay launch shows its short transition into Home.', 'همان تصویر و نشان، بدون دعوت به اقدام. این پیش‌نمایش برای بررسی ثابت می‌ماند؛ اجرای دوباره، گذار کوتاه به خانه را نشان می‌دهد.']
+    ['A violet welcome with a floating rose, cyan, and mint Circle sculpture. Get started opens account registration. Use the replay control to try the shorter returning launch.', 'یه خوش‌آمدگویی بنفش با حلقه‌های شناور صورتی، فیروزه‌ای و نعنایی. با «شروع کنیم» ثبت‌نام رو باز کن؛ یا ورود دوباره رو امتحان کن.'],
+    ['The same artwork and wordmark, without a call to action. This preview stays still for inspection; Replay launch shows its short transition into Home.', 'همون تصویر و لوگو، بدون دکمه‌ی شروع. برای دیدن حرکت کوتاه ورود دوباره، «اجرای دوباره» رو بزن.']
   ]);
   const syncTheme = () => {
     const dark = root.dataset.theme === 'dark';

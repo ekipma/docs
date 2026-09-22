@@ -47,7 +47,7 @@
     }
     document.querySelector('#page-description-title').textContent = route === 'welcome' ? 'Life’s better in Circles.' : 'A familiar hello.';
     document.querySelector('#page-description').textContent = route === 'welcome'
-      ? 'A violet welcome with a floating rose, cyan, and mint Circle sculpture. Get started opens Home. Use the replay control to try the shorter returning launch.'
+      ? 'A violet welcome with a floating rose, cyan, and mint Circle sculpture. Get started opens account registration. Use the replay control to try the shorter returning launch.'
       : 'The same artwork and wordmark, without a call to action. This preview stays still for inspection; Replay launch shows its short transition into Home.';
     document.querySelectorAll('#page-menu a').forEach(link => {
       if (link.hash === '#' + route) link.setAttribute('aria-current', 'page');
@@ -55,7 +55,7 @@
     });
     if (replayRequested) runLaunch();
   };
-  intro.querySelector('.welcome-start').addEventListener('click', () => { location.hash = 'home'; });
+  intro.querySelector('.welcome-start').addEventListener('click', () => { location.hash = 'register'; });
   replay.addEventListener('click', () => {
     replayRequested = true;
     if (location.hash === '#launch') runLaunch();

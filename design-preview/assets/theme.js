@@ -118,7 +118,7 @@
   ]);
   // Localize the supplied demo content without changing record IDs or stored data.
   Object.entries({
-    ekipma: 'اکیپما', EKIPMA: 'اکیپما', Circles: 'جمع‌ها', Back: 'برگشت', Events: 'برنامه‌ها',
+    ekipma: 'اکیپما', EKIPMA: 'اکیپما', Circles: 'جمع‌ها', Back: 'برگشت', Events: 'برنامه‌ها', Records: 'رکوردها', Charts: 'نمودارها',
     'Welcome to Ekipma.': 'به اکیپما خوش اومدی.', 'Your people, one tap away.': 'فقط یه قدم تا جمع رفیق‌هات.',
     'Continue with Google': 'ادامه با گوگل', 'Continue with Apple': 'ادامه با اپل', 'Continue with phone': 'ادامه با شماره موبایل',
     'Sign in / Join': 'ورود یا ثبت‌نام', or: 'یا', 'We’ll text you a sign-in code.': 'کد ورود رو برات پیامک می‌کنیم.',

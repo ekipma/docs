@@ -38,7 +38,8 @@ body { background: #eee8fc; }
 .pastel-palette i:nth-child(3) { background: #9de4c8; }
 .pastel-palette i:nth-child(4) { background: #a47ae6; }
 .phone { border: 1px solid #ffffffb3; background: radial-gradient(ellipse at 90% 48%, #e9e1f645, transparent 64%), linear-gradient(150deg, #fcfcfe, #f3f2f6 70%, #f8f7fa); box-shadow: 0 28px 75px #8060ba18, inset 0 1px 0 #fff; }
-#screen { scrollbar-color: #d7c8ed transparent; }
+#screen, .pastel-intro { scrollbar-width: none; }
+#screen::-webkit-scrollbar, .pastel-intro::-webkit-scrollbar { display: none; }
 .brand > span { color: #a170dd; }
 .profile-button { background: linear-gradient(145deg, #f6e9ff, #e3d2f8); color: #7445a9; border: 1px solid #fff; box-shadow: 0 4px 10px #8669aa12; }
 .header-back { color: #665378; }
@@ -439,17 +440,17 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
   border-radius: inherit;
   corner-shape: inherit;
   background: #ffffffa6;
-  --nav-cutout: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 52'%3E%3Cpath fill='white' d='M0 0H88C83 0 80 4 80 9V17C80 40 74 44 44 44S8 40 8 17V9C8 4 5 0 0 0Z'/%3E%3C/svg%3E");
-  -webkit-mask: linear-gradient(#000 0 0), var(--nav-cutout) center top / 88px 52px no-repeat;
+  --nav-cutout: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 60'%3E%3Cpath fill='white' d='M0 0H88C83 0 80 4 80 9V25C80 48 74 52 44 52S8 48 8 25V9C8 4 5 0 0 0Z'/%3E%3C/svg%3E");
+  -webkit-mask: linear-gradient(#000 0 0), var(--nav-cutout) center top / 88px 60px no-repeat;
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0), var(--nav-cutout) center top / 88px 52px no-repeat;
+  mask: linear-gradient(#000 0 0), var(--nav-cutout) center top / 88px 60px no-repeat;
   mask-composite: exclude;
   pointer-events: none;
 }
 :root[data-theme="dark"] #app-nav::before { background: #0e0b14; }
-.header-actions { display: flex; align-items: center; gap: 8px; }
-.shop-shortcut { display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 15px; corner-shape: squircle; background: var(--glass-neutral); color: var(--lilac); }
-.shop-shortcut .icon { width: 20px; height: 20px; fill: currentColor; stroke: none; }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.shop-shortcut { display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 15px; corner-shape: squircle; background: none; color: var(--lilac); }
+.shop-shortcut .icon { width: 24px; height: 24px; fill: currentColor; stroke: none; }
 .shop-shortcut:hover { filter: brightness(1.08); }
 .shop-shortcut:active { transform: scale(.97); }
 @media (max-width: 360px) {
@@ -484,7 +485,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
   min-height: 56px;
   border-radius: 19px;
   corner-shape: squircle;
-  transform: translateY(-27px);
+  transform: translateY(-19px);
   color: #fff;
   background: radial-gradient(ellipse at 24% 0%, #fff1e78c, transparent 66%), linear-gradient(140deg, #e985bd, #ed8caa 52%, #f3b291);
   box-shadow: inset 0 1px 3px #ffffff73, 0 7px 17px -7px #df77af66, 0 12px 25px -10px #efac8c45;
@@ -508,7 +509,7 @@ dialog header > button { border-color: #ddcdeb; color: #745189; }
 :root[data-theme] #app-nav .add-nav::after,
 :root[data-theme] #app-nav .add-nav[aria-current="page"]::after { content: none; }
 :root[data-theme] #app-nav .add-nav:hover { filter: brightness(1.06); }
-:root[data-theme] #app-nav .add-nav:active { transform: translateY(-27px) scale(.985); filter: brightness(.98); }
+:root[data-theme] #app-nav .add-nav:active { transform: translateY(-19px) scale(.985); filter: brightness(.98); }
 :root[data-theme] #app-nav .add-nav:focus-visible { outline: 2px solid var(--lilac); outline-offset: 4px; border-radius: 19px; }
 
 /* Continue the nav material through the device safe area. */

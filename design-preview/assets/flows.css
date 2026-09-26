@@ -25,6 +25,8 @@
 .flow-empty > .subtext { max-width:270px; margin:0 auto 24px; }
 .flow-sculpture,.flow-auth-art { width:124px; height:124px; display:grid; place-items:center; margin:18px auto 30px; font-size:66px; color:#fff; background:var(--violet); border-radius:38px; corner-shape:squircle; box-shadow:var(--glass-shadow); text-shadow:0 6px 22px #57338428; transform:rotate(-7deg); }
 .flow-auth-art.mint { background:var(--playful-action); }
+.flow-auth:has(#login-form) .flow-auth-art,
+.flow-auth:has(#register-form) .flow-auth-art { display:none; }
 .flow-empty .row { text-align:start; }
 .flow-auth #app-nav { display:none; }
 .auth-options { display:grid; gap:12px; margin-top:24px; }
@@ -34,7 +36,6 @@
 .auth-divider::before,.auth-divider::after { content:''; flex:1; height:1px; background:var(--border); }
 .auth-terms { margin-top:24px; font-size:11px; color:var(--muted); line-height:1.8; text-align:center; }
 .auth-number { margin-top:18px; font-size:16px; color:var(--muted); text-align:start; }
-.flow-auth:has(#register-form) .flow-auth-art { display:none; }
 .flow-auth #account-form .action,.flow-auth #otp-form .action { margin-top:24px; }
 .flow-auth .home-indicator { background:transparent; }
 .flow-inline { display:grid; grid-template-columns:88px minmax(0,1fr); gap:12px; }

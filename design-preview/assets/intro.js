@@ -60,7 +60,7 @@
     if (replayRequested) runLaunch();
     window.dispatchEvent(new Event('pastel-language-ready'));
   };
-  intro.querySelector('.welcome-start').addEventListener('click', () => { location.hash = 'register'; });
+    intro.querySelector('.welcome-start').addEventListener('click', () => { location.hash = 'login'; });
   replay.addEventListener('click', () => {
     replayRequested = true;
     if (location.hash === '#launch') runLaunch();

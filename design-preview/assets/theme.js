@@ -103,7 +103,7 @@
     ,['Verify number', 'تأیید شماره'], ['Join Circle', 'پیوستن به حلقه'], ['Add friend', 'افزودن دوست'],
     ['Contacts', 'مخاطبان'], ['Members', 'اعضا'], ['Invitation', 'دعوت‌نامه'], ['Circle settings', 'تنظیمات حلقه'],
     ['A turn', 'یک نوبت'], ['Confirm repayment', 'تأیید بازپرداخت'], ['Settle a balance', 'تسویه حساب'],
-    ['Payment status', 'وضعیت پرداخت'], ['Privacy & terms', 'حریم خصوصی و شرایط'], ['Persian study', 'مطالعه فارسی'],
+    ['Payment status', 'وضعیت پرداخت'], ['Privacy & terms', 'حریم خصوصی و شرایط'],
     ['Get started', 'شروع کنیم'], ['Make it complete', 'کاملش کن'], ['↙ You’re owed', '↙ از تو طلبکارند'], ['↙ You\'re owed', '↙ از تو طلبکارند'],
     ['↗ You owe', '↗ تو بدهکاری'], ['All Circles ↗', 'همه حلقه‌ها ↗'], ['2 shared Circles', '۲ حلقه مشترک'],
     ['Owes you', 'به تو بدهکار است'], ['All activity ↗', 'همه فعالیت‌ها ↗'], ['Weekend crew · payment', 'گروه آخرهفته · پرداخت'],
